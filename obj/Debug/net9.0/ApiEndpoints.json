@@ -1,0 +1,104 @@
+[
+  {
+    "ContainingType": "CobroDIController",
+    "Method": "SolTokenDI",
+    "RelativePath": "v1/cce/debinm",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CobroDl.CobroDIResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DebinController",
+    "Method": "SolTokenDI",
+    "RelativePath": "v1/cce/debinm",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.TokenDl.TokenDIResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CobroDIController",
+    "Method": "CobroDI",
+    "RelativePath": "v1/cce/debinm/CobroDI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DebinController",
+    "Method": "TokenDI",
+    "RelativePath": "v1/cce/debinm/tokenDI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

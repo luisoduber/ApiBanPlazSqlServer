@@ -1,0 +1,6 @@
+@ApiBanPlaz_HostAddress = http://localhost:5137
+
+GET {{ApiBanPlaz_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,374 @@
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\appsettings.json
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.staticwebassets.endpoints.json
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.exe
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.deps.json
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.runtimeconfig.json
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.pdb
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.AssemblyReference.cache
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfoInputs.cache
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfo.cs
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\scopedcss\bundle\ApiBanPlaz.styles.css
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.Up2Date
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\refint\ApiBanPlaz.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.pdb
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.genruntimeconfig.cache
+C:\Users\usuario\source\repos\ApiBanPlaz\obj\Debug\net9.0\ref\ApiBanPlaz.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\MySqlConnector.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\usuario\source\repos\ApiBanPlaz\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\appsettings.json
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.staticwebassets.endpoints.json
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.exe
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.deps.json
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.runtimeconfig.json
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.pdb
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\MySqlConnector.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.AssemblyReference.cache
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfoInputs.cache
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfo.cs
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.CoreCompileInputs.cache
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\scopedcss\bundle\ApiBanPlaz.styles.css
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.Up2Date
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\refint\ApiBanPlaz.dll
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.pdb
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.genruntimeconfig.cache
+C:\Users\programacion\Desktop\ApiBanPlaz\obj\Debug\net9.0\ref\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.AssemblyReference.cache
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.GeneratedMSBuildEditorConfig.editorconfig
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfoInputs.cache
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfo.cs
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.CoreCompileInputs.cache
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cs
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cache
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.sourcelink.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\refint\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.pdb
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\appsettings.Development.json
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.staticwebassets.endpoints.json
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\appsettings.json
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.exe
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.deps.json
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.runtimeconfig.json
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.pdb
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\MySqlConnector.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\scopedcss\bundle\ApiBanPlaz.styles.css
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.development.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.Up2Date
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.genruntimeconfig.cache
+E:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ref\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\appsettings.Development.json
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\appsettings.json
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.staticwebassets.endpoints.json
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.exe
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.deps.json
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.runtimeconfig.json
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\ApiBanPlaz.pdb
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\MySqlConnector.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.AssemblyReference.cache
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.GeneratedMSBuildEditorConfig.editorconfig
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfoInputs.cache
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfo.cs
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.CoreCompileInputs.cache
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cs
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cache
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.sourcelink.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\scopedcss\bundle\ApiBanPlaz.styles.css
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.development.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.csproj.Up2Date
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\refint\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.pdb
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ApiBanPlaz.genruntimeconfig.cache
+D:\GITHUB\ApiBanPlaz\obj\Debug\net9.0\ref\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Azure.Core.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Azure.Identity.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.ClientModel.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Memory.Data.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\GITHUB\ApiBanPlaz\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\appsettings.Development.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\appsettings.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.staticwebassets.endpoints.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.exe
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.deps.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.runtimeconfig.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.pdb
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Azure.Core.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Azure.Identity.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\MySqlConnector.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.ClientModel.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Memory.Data.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.csproj.AssemblyReference.cache
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.GeneratedMSBuildEditorConfig.editorconfig
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfoInputs.cache
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfo.cs
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.csproj.CoreCompileInputs.cache
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cs
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cache
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.sourcelink.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\scopedcss\bundle\ApiBanPlaz.styles.css
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\staticwebassets.build.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\staticwebassets.development.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.csproj.Up2Date
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\refint\ApiBanPlaz.dll
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.pdb
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.genruntimeconfig.cache
+D:\GITHUB\ApiBanPlaz--SQLSERVER\obj\Debug\net9.0\ref\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\appsettings.Development.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\appsettings.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.staticwebassets.endpoints.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.exe
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.deps.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.runtimeconfig.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\ApiBanPlaz.pdb
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Azure.Core.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Azure.Identity.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\MySqlConnector.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.ClientModel.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Drawing.Common.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Memory.Data.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Security.Permissions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\System.Windows.Extensions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.csproj.AssemblyReference.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.GeneratedMSBuildEditorConfig.editorconfig
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfoInputs.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.AssemblyInfo.cs
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.csproj.CoreCompileInputs.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cs
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.MvcApplicationPartsAssemblyInfo.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.sourcelink.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\scopedcss\bundle\ApiBanPlaz.styles.css
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\staticwebassets.build.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\staticwebassets.development.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\swae.build.ex.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.csproj.Up2Date
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\refint\ApiBanPlaz.dll
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.pdb
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ApiBanPlaz.genruntimeconfig.cache
+E:\GITHUB\ApiBanPlaz - SQLSERVER\obj\Debug\net9.0\ref\ApiBanPlaz.dll

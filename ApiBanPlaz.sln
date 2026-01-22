@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBanPlaz", "ApiBanPlaz.csproj", "{478511EF-4291-437A-8EB6-6D6F2800DAAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{478511EF-4291-437A-8EB6-6D6F2800DAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478511EF-4291-437A-8EB6-6D6F2800DAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478511EF-4291-437A-8EB6-6D6F2800DAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478511EF-4291-437A-8EB6-6D6F2800DAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE452E2A-54A4-4946-95EB-BAB23650450B}
+	EndGlobalSection
+EndGlobal
