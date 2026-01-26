@@ -31,9 +31,12 @@ namespace ApiBanPlaz.Servicios.CobroDl
             string prmNombre_p,
             decimal prmMonto,
             string prmConcepto,
+            string prmToken_p,
             string prmDireccion_ip,
+            string prmReferencia_c,
             string prmCadReq)
         {
+
             var sql = @"
         EXEC spGrdCobroDIReq
             @prmMoneda,
@@ -47,7 +50,9 @@ namespace ApiBanPlaz.Servicios.CobroDl
             @prmNombre_p,
             @prmMonto,
             @prmConcepto,
+            @prmToken_p,
             @prmDireccion_ip,
+            @prmReferencia_c,
             @prmCadReq";
 
             var id = await _context.Database
@@ -64,7 +69,9 @@ namespace ApiBanPlaz.Servicios.CobroDl
              new SqlParameter("@prmNombre_p", prmNombre_p),
              new SqlParameter("@prmMonto", prmMonto),
              new SqlParameter("@prmConcepto", prmConcepto),
+             new SqlParameter("@prmToken_p", prmToken_p),
              new SqlParameter("@prmDireccion_ip", prmDireccion_ip),
+             new SqlParameter("@prmReferencia_c", prmReferencia_c),
              new SqlParameter("@prmCadReq", prmCadReq)
          )
          .ToListAsync();

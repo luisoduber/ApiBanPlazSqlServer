@@ -1,6 +1,7 @@
 ﻿using ApiBanPlaz.models.CobroDI;
 using ApiBanPlaz.models.CobroDl;
 using ApiBanPlaz.models.Entities;
+using ApiBanPlaz.models.TokenDl;
 using ApiBanPlaz.Servicios.CobroDl;
 using ApiBanPlaz.Servicios.General;
 using Microsoft.AspNetCore.Mvc;
@@ -77,7 +78,9 @@ public class CobroDIController : ControllerBase
             _ReqCobroDI.Nombre_p,
             _ReqCobroDI.Monto,
             _ReqCobroDI.Concepto,
+            _ReqCobroDI.Token_p,
             _ReqCobroDI.Direccion_ip,
+            _ReqCobroDI.referencia_c,
             reqCobroDI
             );
 
