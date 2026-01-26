@@ -41,7 +41,7 @@
     ]
   },
   {
-    "ContainingType": "DebinController",
+    "ContainingType": "TokenDIController",
     "Method": "SolTokenDI",
     "RelativePath": "v1/cce/debinm",
     "HttpMethod": "",
@@ -92,7 +92,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DebinController",
+    "ContainingType": "TokenDIController",
     "Method": "TokenDI",
     "RelativePath": "v1/cce/debinm/tokenDI",
     "HttpMethod": "POST",

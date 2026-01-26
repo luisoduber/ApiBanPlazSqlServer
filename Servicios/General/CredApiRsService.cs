@@ -1,7 +1,7 @@
 ﻿using ApiBanPlaz.models.TokenDl;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
-using static DebinController;
+using static TokenDIController;
 
 namespace ApiBanPlaz.Servicios.General
 {

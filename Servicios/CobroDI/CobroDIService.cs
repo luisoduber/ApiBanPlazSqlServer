@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using static DebinController;
+using static TokenDIController;
 
 namespace ApiBanPlaz.Servicios.CobroDl
 {
@@ -106,7 +106,6 @@ namespace ApiBanPlaz.Servicios.CobroDl
                     new SqlParameter("@prmEndtoend", prmEndtoend),
                     new SqlParameter("@prmCadResp", prmCadResp)
                 );
-
                 return rows > 0 ? true : false;
             }
             catch (Exception ex)

@@ -14,7 +14,7 @@ using System.Text;
 
 [ApiController]
 [Route("v1/cce/debinm")]
-public class DebinController : ControllerBase
+public class TokenDIController : ControllerBase
 {
     private readonly NonceService _nonceService;
     private readonly CredApiRsService _credApiRsService;
@@ -26,7 +26,7 @@ public class DebinController : ControllerBase
 
     TokenDIResp _TokenDIResp = new TokenDIResp();
     TokenDI _TokenDI = new TokenDI();
-    public DebinController(IConfiguration config, NonceService nonceService, 
+    public TokenDIController(IConfiguration config, NonceService nonceService, 
                         CredApiRsService credApiRsService, TokenDIService tokenDIService)
     {
         _nonceService = nonceService;

@@ -94,7 +94,6 @@ public class CobroDIController : ControllerBase
 
         return Ok(new
         {
-            reqCobroDI,
             _CobroDI.IdCobroDI,
              rsValCobroDIResp,
             _CobroDIResp.CodigoRespuesta,
@@ -126,9 +125,9 @@ public class CobroDIController : ControllerBase
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            using (var Res = await client.PostAsync("/v1/cce/debinm/cobroDI", content))
+            using (var Res = await client.PostAsync("v1/cce/debinm/cobroDI", content))
             {
-                if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta= values.FirstOrDefault(); }
+                if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta= values.FirstOrDefault();  Debug.WriteLine(values.FirstOrDefault()); }
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
