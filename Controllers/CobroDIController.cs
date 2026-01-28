@@ -38,6 +38,75 @@ public class CobroDIController : ControllerBase
         _CobroDIService = cobroDIService;
     }
 
+    [HttpGet("cobroDI/{id}")]
+    public async Task<IActionResult> CobroDI(string id)
+    {
+        // 1. Leer el body como string "crudo"
+        string reqCobroDI = "";
+        using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
+        {
+            reqCobroDI = await reader.ReadToEndAsync();
+        }
+
+        var _ReqCobroDI = JsonConvert.DeserializeObject<CobroDIReq>(reqCobroDI);
+        if (_ReqCobroDI == null) return BadRequest("Cuerpo de petición inválido.");
+
+        string nonce = await _nonceService.ObtNonce();
+        var cred = await _credApiRsService.ObtCredApi();
+        if (cred == null) return NotFound();
+
+        string path = "v1/cce/debinm/cobroDI";
+        string apiSignature = ApiSignatureGen.Generar(
+            path,
+            nonce,
+           reqCobroDI,
+            cred.apiKeySecret
+        );
+
+        _CobroDIResp = await SolCobroDI(reqCobroDI, cred.ApiKey, apiSignature, nonce);
+        //return Ok(new { nonce,cred.ApiKey,cred.apiKeySecret,apiSignature});
+
+        _CobroDI.IdCobroDI = await _CobroDIService.GrdCobroDIAsync(
+            _ReqCobroDI.Moneda,
+            _ReqCobroDI.Canal,
+            _ReqCobroDI.Tvalidacion_p,
+            _ReqCobroDI.Identificacion_p,
+            _ReqCobroDI.Cuenta_cobrador,
+            _ReqCobroDI.Cuenta_pagador,
+            _ReqCobroDI.Telefono_pagador,
+            _ReqCobroDI.Cod_banco_p,
+            _ReqCobroDI.Nombre_p,
+            _ReqCobroDI.Monto,
+            _ReqCobroDI.Concepto,
+            _ReqCobroDI.Token_p,
+            _ReqCobroDI.Direccion_ip,
+            _ReqCobroDI.referencia_c,
+            reqCobroDI
+            );
+
+        string jsonCobroDIResp = JsonConvert.SerializeObject(_CobroDIResp);
+        bool rsValCobroDIResp = await _CobroDIService.GrdCobroDIRespAsync(
+            _CobroDI.IdCobroDI,
+            _CobroDIResp.CodigoRespuesta,
+            _CobroDIResp.DescripcionCliente,
+            _CobroDIResp.DescripcionSistema,
+            _CobroDIResp.FechaHora,
+            _CobroDIResp.Referencia_c,
+            _CobroDIResp.Endtoend,
+            jsonCobroDIResp);
+
+        return Ok(new
+        {
+            _CobroDI.IdCobroDI,
+            rsValCobroDIResp,
+            _CobroDIResp.CodigoRespuesta,
+            _CobroDIResp.DescripcionCliente,
+            _CobroDIResp.DescripcionSistema,
+            _CobroDIResp.FechaHora
+
+        });
+    }
+
     [HttpPost("CobroDI")]
     public async Task<IActionResult> CobroDI()
     {
@@ -63,7 +132,7 @@ public class CobroDIController : ControllerBase
             cred.apiKeySecret
         );
 
-        _CobroDIResp = await SolTokenDI(reqCobroDI, cred.ApiKey,apiSignature, nonce);
+        _CobroDIResp = await SolCobroDI(reqCobroDI, cred.ApiKey,apiSignature, nonce);
         //return Ok(new { nonce,cred.ApiKey,cred.apiKeySecret,apiSignature});
 
         _CobroDI.IdCobroDI = await _CobroDIService.GrdCobroDIAsync(
@@ -107,7 +176,7 @@ public class CobroDIController : ControllerBase
         });
     }
 
-    public async Task<CobroDIResp> SolTokenDI(string prmJson, string prmApiKey, 
+    public async Task<CobroDIResp> SolCobroDI(string prmJson, string prmApiKey, 
                                          string prmApiSignature, string prmNonce)
     {
         string rsDat = "";
@@ -134,7 +203,7 @@ public class CobroDIController : ControllerBase
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-             
+
 
                 //Debug.WriteLine("codigoRespuest: "+codigoRespuesta);
                 //Debug.WriteLine("descripcionCliente: " + descripcionCliente);
@@ -142,15 +211,15 @@ public class CobroDIController : ControllerBase
                 //Debug.WriteLine("fechaHora : " + fechaHora);
                 //Debug.WriteLine("urlBan: " + urlBan + "/v1/cce/debinm/cobroDI");
 
+                rsDat = await Res.Content.ReadAsStringAsync();
+                _CobroDIResp = JsonConvert.DeserializeObject<CobroDIResp>(rsDat);
+                //Debug.WriteLine(_CobroDIResp.Referencia_c + " | " + _CobroDIResp.Endtoend);
+
                 _CobroDIResp.CodigoRespuesta = codigoRespuesta;
                 _CobroDIResp.DescripcionCliente = descripcionCliente;
                 _CobroDIResp.DescripcionSistema = descripcionSistema;
                 _CobroDIResp.FechaHora =DateTime.Parse(fechaHora);
-               _CobroDIResp.Referencia_c ="";
-                _CobroDIResp.Endtoend = "";
 
-                // rsDat = await Res.Content.ReadAsStringAsync();
-                // _CobroDIResp = JsonConvert.DeserializeObject<CobroDIResp>(rsDat);
             }
         }
         return _CobroDIResp;
