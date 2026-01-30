@@ -36,7 +36,6 @@ namespace ApiBanPlaz.Servicios.CobroDl
             string prmReferencia_c,
             string prmCadReq)
         {
-
             var sql = @"
         EXEC spGrdCobroDIReq
             @prmMoneda,
@@ -113,6 +112,7 @@ namespace ApiBanPlaz.Servicios.CobroDl
                     new SqlParameter("@prmEndtoend", prmEndtoend),
                     new SqlParameter("@prmCadResp", prmCadResp)
                 );
+
                 return rows > 0 ? true : false;
             }
             catch (Exception ex)

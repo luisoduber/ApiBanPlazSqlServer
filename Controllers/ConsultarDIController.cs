@@ -1,5 +1,5 @@
 ﻿using ApiBanPlaz.models.Entities;
-using ApiBanPlaz.models.TokenDl;
+using ApiBanPlaz.models.ConsultarDl;
 using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.TokenDl;
 using Microsoft.AspNetCore.Mvc;
@@ -11,95 +11,92 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
 using System.Text;
+using ApiBanPlaz.Servicios.ConsultarDl;
 
 [ApiController]
 [Route("v1/cce/debinm")]
-public class TokenDIController : ControllerBase
+public class ConsultarDIController : ControllerBase
 {
     private readonly NonceService _nonceService;
     private readonly CredApiRsService _credApiRsService;
 
-    private readonly TokenDIService _TokenDIService;
+    private readonly ConsultarDlService _ConsultarDIService;
     private readonly IConfiguration _config;
     string urlBan = "";
-    int idTokenDI = 0;
+    int idConsultarDI = 0;
 
-    TokenDlResp _TokenDIResp = new TokenDlResp();
-    TokenDI _TokenDI = new TokenDI();
-    public TokenDIController(IConfiguration config, NonceService nonceService, 
-                        CredApiRsService credApiRsService, TokenDIService tokenDIService)
+    ConsultarDlResp _ConsultarDIResp = new ConsultarDlResp();
+    ConsultarDI _ConsultarDI = new ConsultarDI();
+    public ConsultarDIController(IConfiguration config, NonceService nonceService, 
+                        CredApiRsService credApiRsService, ConsultarDlService ConsultarDIService)
     {
         _nonceService = nonceService;
         _credApiRsService = credApiRsService;
         _config = config;
         urlBan = _config["urlBan"].ToString();
-        _TokenDIService = tokenDIService;
+        _ConsultarDIService = ConsultarDIService;
     }
 
-    [HttpPost("tokenDI")]
-    public async Task<IActionResult> TokenDI()
+    [HttpPost("ConsultarDl")]
+    public async Task<IActionResult> ConsultarDI()
     {
         // 1. Leer el body como string "crudo"
-        string reqTokeDI="";
+        string reqConsultarDI = "";
         using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
         {
-            reqTokeDI = await reader.ReadToEndAsync();
+            reqConsultarDI = await reader.ReadToEndAsync();
         }
 
-        var _ReqTokeDI = JsonConvert.DeserializeObject<TokenDIReq>(reqTokeDI);
-        if (_ReqTokeDI == null) return BadRequest("Cuerpo de petición inválido.");
+        var _ReqConsultarDI = JsonConvert.DeserializeObject<ConsultarDlReq>(reqConsultarDI);
+        if (_ReqConsultarDI == null) return BadRequest("Cuerpo de petición inválido.");
 
         string nonce = await _nonceService.ObtNonce();
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
 
-        string path = "v1/cce/debinm/tokenDI";
+        string path = "v1/cce/debinm/ConsultarDI";
         string apiSignature = ApiSignatureGen.Generar(
             path,
             nonce,
-            reqTokeDI,
+            reqConsultarDI,
             cred.apiKeySecret
         );
 
-        _TokenDIResp = await SolTokenDI(reqTokeDI, cred.ApiKey,apiSignature, nonce);
+        _ConsultarDIResp = await SolConsultarDI(reqConsultarDI, cred.ApiKey,apiSignature, nonce);
         //return Ok(new { nonce,cred.ApiKey,cred.apiKeySecret,apiSignature});
 
-        _TokenDI.IdTokenDI= await _TokenDIService.GrdTokenDIAsync(
-            _ReqTokeDI.Moneda,
-            _ReqTokeDI.Canal,
-            _ReqTokeDI.Tvalidacion_p,
-            _ReqTokeDI.Identificacion_p,
-            _ReqTokeDI.Cuenta_cobrador,
-            _ReqTokeDI.Cuenta_pagador,
-            _ReqTokeDI.Telefono_pagador,
-            _ReqTokeDI.Cod_banco_p,
-            _ReqTokeDI.Monto,
-            _ReqTokeDI.Direccion_ip,
-            reqTokeDI
+        _ConsultarDI.IdConsultarDI= await _ConsultarDIService.GrdConsultarDIAsync(
+            _ReqConsultarDI.Id,
+            _ReqConsultarDI.cuenta_cobrador,
+            _ReqConsultarDI.endtoend,
+            _ReqConsultarDI.referencia_c,
+            _ReqConsultarDI.Monto,
+            _ReqConsultarDI.canal,
+            reqConsultarDI
             );
 
-        string jsonTokenDIResp = JsonConvert.SerializeObject(_TokenDIResp);
-        bool rsValTokDIResp = await _TokenDIService.GrdTokenDIRespAsync(
-            _TokenDI.IdTokenDI,
-            _TokenDIResp.CodigoRespuesta,
-            _TokenDIResp.DescripcionCliente,
-            _TokenDIResp.DescripcionSistema,
-            _TokenDIResp.FechaHora,
-            jsonTokenDIResp);
+        string jsonConsultarDIResp = JsonConvert.SerializeObject(_ConsultarDIResp);
+        bool rsValConsultarDIResp = await _ConsultarDIService.GrdConsultarDIRespAsync(
+            _ConsultarDI.IdConsultarDI,
+            _ConsultarDIResp.CodigoRespuesta,
+            _ConsultarDIResp.DescripcionCliente,
+            _ConsultarDIResp.DescripcionSistema,
+            _ConsultarDIResp.FechaHora,
+            jsonConsultarDIResp);
 
         return Ok(new
         {
-            _TokenDI.IdTokenDI,
-             rsValTokDIResp,
-            _TokenDIResp.CodigoRespuesta,
-            _TokenDIResp.DescripcionCliente,
-            _TokenDIResp.DescripcionSistema,
-            _TokenDIResp.FechaHora
+            _ConsultarDI.IdConsultarDI,
+            rsValConsultarDIResp,
+            _ConsultarDIResp.CodigoRespuesta,
+            _ConsultarDIResp.DescripcionCliente,
+            _ConsultarDIResp.DescripcionSistema,
+            _ConsultarDIResp.FechaHora
 
         });
     }
 
-    public async Task<TokenDlResp> SolTokenDI(string prmJson, string prmApiKey, 
+    public async Task<ConsultarDlResp> SolConsultarDI(string prmJson, string prmApiKey, 
                                          string prmApiSignature, string prmNonce)
     {
         string rsDat = "";
@@ -119,7 +116,7 @@ public class TokenDIController : ControllerBase
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            using (var Res = await client.PostAsync("v1/cce/debinm/tokenDI", content))
+            using (var Res = await client.PostAsync("v1/cce/debinm/ConsultarDI", content))
             {
                 if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta= values.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
@@ -130,18 +127,18 @@ public class TokenDIController : ControllerBase
                 //Debug.WriteLine("descripcionCliente: " + descripcionCliente);
                 //Debug.WriteLine("descripcionSistema : " + descripcionSistema);
                 //Debug.WriteLine("fechaHora : " + fechaHora);
-                //Debug.WriteLine("urlBan: " + urlBan + "v1/cce/debinm/tokenDI");
+                //Debug.WriteLine("urlBan: " + urlBan + "v1/cce/debinm/ConsultarDI");
 
-                _TokenDIResp.CodigoRespuesta = codigoRespuesta;
-                _TokenDIResp.DescripcionCliente = descripcionCliente;
-                _TokenDIResp.DescripcionSistema = descripcionSistema;
-                _TokenDIResp.FechaHora =DateTime.Parse(fechaHora); 
+                _ConsultarDIResp.CodigoRespuesta = codigoRespuesta;
+                _ConsultarDIResp.DescripcionCliente = descripcionCliente;
+                _ConsultarDIResp.DescripcionSistema = descripcionSistema;
+                _ConsultarDIResp.FechaHora =DateTime.Parse(fechaHora); 
 
                 // rsDat = await Res.Content.ReadAsStringAsync();
-                // _TokenDIResp = JsonConvert.DeserializeObject<TokenDIResp>(rsDat);
+                // _ConsultarDIResp = JsonConvert.DeserializeObject<ConsultarDIResp>(rsDat);
             }
         }
-        return _TokenDIResp;
+        return _ConsultarDIResp;
     }
 
 

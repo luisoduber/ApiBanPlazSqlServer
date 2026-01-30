@@ -41,6 +41,47 @@
     ]
   },
   {
+    "ContainingType": "ConsultarDIController",
+    "Method": "SolConsultarDI",
+    "RelativePath": "v1/cce/debinm",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.ConsultarDl.ConsultarDlResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "TokenDIController",
     "Method": "SolTokenDI",
     "RelativePath": "v1/cce/debinm",
@@ -71,7 +112,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiBanPlaz.models.TokenDl.TokenDIResp",
+        "Type": "ApiBanPlaz.models.TokenDl.TokenDlResp",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -85,6 +126,16 @@
     "ContainingType": "CobroDIController",
     "Method": "CobroDI",
     "RelativePath": "v1/cce/debinm/CobroDI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ConsultarDIController",
+    "Method": "ConsultarDI",
+    "RelativePath": "v1/cce/debinm/ConsultarDl",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

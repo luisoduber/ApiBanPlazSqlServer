@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace ApiBanPlaz.models.CobroDl
+namespace ApiBanPlaz.models.General
 {
     [Keyless]
     public class CredApiRs

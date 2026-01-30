@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApiBanPlaz.models.TokenDl
+namespace ApiBanPlaz.models.ConsultarDl
 {
-    public class TokenDlResp
+    public class ConsultarDlResp
     {
         public string CodigoRespuesta { get; set; }
         public string DescripcionCliente { get; set; }

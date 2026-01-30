@@ -1,7 +1,10 @@
 ﻿using ApiBanPlaz.models.Entities;
 using ApiBanPlaz.models.Responses;
 using ApiBanPlaz.models.TokenDl;
+using ApiBanPlaz.models.CobroDI;
+using ApiBanPlaz.models.ConsultarDl;
 using Microsoft.EntityFrameworkCore;
+using ApiBanPlaz.models.General;
 
 public class BanPlazDbContext : DbContext
 {
@@ -16,7 +19,9 @@ public class BanPlazDbContext : DbContext
 
         modelBuilder.Entity<ContNonce>().HasNoKey();
         modelBuilder.Entity<CredApiRs>().HasNoKey();
+        modelBuilder.Entity<ConsultarDI>().HasNoKey();
         modelBuilder.Entity<TokenDI>().HasNoKey();
+        modelBuilder.Entity<CobroDI>().HasNoKey();
     }
 
 

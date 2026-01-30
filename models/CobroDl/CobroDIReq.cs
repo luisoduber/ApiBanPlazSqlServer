@@ -38,12 +38,12 @@ namespace ApiBanPlaz.models.CobroDl
 
         [Required]
         public string Concepto { get; set; }
+
         [Required]
         public string? Token_p { get; set; }
         [Required]
         public string? Direccion_ip { get; set; }
         [Required]
-        public string? referencia_c { get; set; }
-
+        public string? Referencia_c { get; set; }
     }
 }

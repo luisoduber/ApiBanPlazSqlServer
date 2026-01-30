@@ -1,6 +1,7 @@
 using ApiBanPlaz.Servicios.CobroDl;
 using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.TokenDl;
+using ApiBanPlaz.Servicios.ConsultarDl;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,7 @@ builder.Services.AddScoped<NonceService>();
 
 builder.Services.AddScoped<TokenDIService>();
 builder.Services.AddScoped<CobroDIService>();
+builder.Services.AddScoped<ConsultarDlService>();
 
 var app = builder.Build();
 

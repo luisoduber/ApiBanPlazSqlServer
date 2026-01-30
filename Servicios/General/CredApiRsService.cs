@@ -1,4 +1,4 @@
-﻿using ApiBanPlaz.models.TokenDl;
+﻿using ApiBanPlaz.models.General;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using static TokenDIController;
