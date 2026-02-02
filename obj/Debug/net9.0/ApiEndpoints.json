@@ -172,7 +172,7 @@
       },
       {
         "Name": "canal",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

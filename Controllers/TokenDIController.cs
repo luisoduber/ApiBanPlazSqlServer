@@ -39,7 +39,6 @@ public class TokenDIController : ControllerBase
     [HttpPost("tokenDI")]
     public async Task<IActionResult> TokenDI()
     {
-        // 1. Leer el body como string "crudo"
         string reqTokeDI="";
         using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
         {
@@ -62,8 +61,6 @@ public class TokenDIController : ControllerBase
         );
 
         _TokenDIResp = await SolTokenDI(reqTokeDI, cred.ApiKey,apiSignature, nonce);
-        //return Ok(new { nonce,cred.ApiKey,cred.apiKeySecret,apiSignature});
-
         _TokenDI.IdTokenDI= await _TokenDIService.GrdTokenDIAsync(
             _ReqTokeDI.Moneda,
             _ReqTokeDI.Canal,
@@ -126,12 +123,6 @@ public class TokenDIController : ControllerBase
                 if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
 
-                //Debug.WriteLine("codigoRespuest: "+codigoRespuesta);
-                //Debug.WriteLine("descripcionCliente: " + descripcionCliente);
-                //Debug.WriteLine("descripcionSistema : " + descripcionSistema);
-                //Debug.WriteLine("fechaHora : " + fechaHora);
-                //Debug.WriteLine("urlBan: " + urlBan + "v1/cce/debinm/tokenDI");
-
                 _TokenDIResp.CodigoRespuesta = codigoRespuesta;
                 _TokenDIResp.DescripcionCliente = descripcionCliente;
                 _TokenDIResp.DescripcionSistema = descripcionSistema;
@@ -149,7 +140,6 @@ public class TokenDIController : ControllerBase
     {
         public static string GenApiKey()
         {
-            // 16 bytes = 32 caracteres hex
             byte[] bytes = new byte[16];
 
             using (var rng = RandomNumberGenerator.Create())
@@ -177,21 +167,12 @@ public static class ApiSignatureGen
 {
     public static string Generar(string path, string nonce, string body, string secret)
     {
-        // 1. Recrear la cadena de firma exactamente como en el JS de Postman:
-        // let signature = `/${apiPath}${nonce}${body}`;
-        // Asegúrate de que 'path' no tenga la '/' inicial al pasarlo, o ajusta aquí:
         string signatureRaw = $"/{path}{nonce}{body}";
-
-        // 2. Convertir a bytes usando UTF-8
         byte[] keyBytes = Encoding.UTF8.GetBytes(secret);
         byte[] messageBytes = Encoding.UTF8.GetBytes(signatureRaw);
-
-        // 3. Calcular HMAC SHA384
         using (var hmac = new HMACSHA384(keyBytes))
         {
             byte[] hashBytes = hmac.ComputeHash(messageBytes);
-
-            // 4. Convertir a Hexadecimal (minúsculas como hace CryptoJS por defecto)
             return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
         }
     }

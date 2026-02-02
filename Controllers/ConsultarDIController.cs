@@ -45,7 +45,7 @@ public class ConsultarDIController : ControllerBase
         [FromQuery] string endtoend,
         [FromQuery] string referencia_c,
         [FromQuery] decimal monto,
-        [FromQuery] int canal)
+        [FromQuery] string canal)
 
     {
         string queryStringDI= "";
@@ -55,22 +55,29 @@ public class ConsultarDIController : ControllerBase
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
 
-        string path = "v1/cce/debinm/consultarDI/";
+        string path = "v1/cce/debinm/consultarDI";
+
+
         string apiSignature = ApiSignatureGen.Generar(
             path,
             nonce,
             cred.apiKeySecret
         );
 
-        queryStringDI= 
+        queryStringDI =
                        "?cuenta_cobrador=" + cuenta_cobrador +
                        "&endtoend=" + endtoend +
                        "&referencia_c=" + referencia_c +
-                       "&monto=" + monto.ToString("F2") +
+                       "&monto=" + monto.ToString().Replace(",",".") +
                        "&canal=" + canal.ToString();
 
         _ConsultarDIResp = await SolConsultarDI(id, queryStringDI, cred.ApiKey,apiSignature, nonce);
-        //return Ok(new { nonce,cred.ApiKey,cred.apiKeySecret,apiSignature});
+        _ConsultarDlReq.Id = id;
+        _ConsultarDlReq.cuenta_cobrador = cuenta_cobrador;
+        _ConsultarDlReq.endtoend = endtoend;
+        _ConsultarDlReq.referencia_c = referencia_c;
+        _ConsultarDlReq.Monto = monto;
+        _ConsultarDlReq.canal= canal;
 
         _ConsultarDI.IdConsultarDI= await _ConsultarDIService.GrdConsultarDIAsync(
              _ConsultarDlReq.Id,
@@ -127,8 +134,8 @@ public class ConsultarDIController : ControllerBase
             Debug.WriteLine($"prmApiSignature: {prmApiSignature}");
             Debug.WriteLine($"prmNonce: {prmNonce}");
 
-            Debug.WriteLine($"{urlBan}v1/cce/debinm/ConsultarDI/{prmId}{prmQryString}");
-            using (var Res = await client.GetAsync($"v1/cce/debinm/ConsultarDI/{prmId}{prmQryString}"))
+            Debug.WriteLine($"{urlBan}v1/cce/debinm/consultarDI/{prmId}{prmQryString}");
+            using (var Res = await client.GetAsync($"v1/cce/debinm/consultarDI/{prmId}{prmQryString}"))
             {
 
                 Debug.WriteLine("respuesta: "+Res.IsSuccessStatusCode);
@@ -136,12 +143,6 @@ public class ConsultarDIController : ControllerBase
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-
-                //Debug.WriteLine("codigoRespuest: "+codigoRespuesta);
-                //Debug.WriteLine("descripcionCliente: " + descripcionCliente);
-                //Debug.WriteLine("descripcionSistema : " + descripcionSistema);
-                //Debug.WriteLine("fechaHora : " + fechaHora);
-                //Debug.WriteLine("urlBan: " + urlBan + "v1/cce/debinm/ConsultarDI");
 
                 _ConsultarDIResp.CodigoRespuesta = codigoRespuesta;
                 _ConsultarDIResp.DescripcionCliente = descripcionCliente;

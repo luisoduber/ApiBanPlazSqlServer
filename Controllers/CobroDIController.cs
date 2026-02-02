@@ -40,7 +40,6 @@ public class CobroDIController : ControllerBase
     [HttpPost("CobroDI")]
     public async Task<IActionResult> CobroDI()
     {
-        // 1. Leer el body como string "crudo"
         string reqCobroDI="";
         using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
         {
@@ -63,8 +62,6 @@ public class CobroDIController : ControllerBase
         );
 
         _CobroDIResp = await SolTokenDI(reqCobroDI, cred.ApiKey,apiSignature, nonce);
-        //return Ok(new { nonce,cred.ApiKey,cred.apiKeySecret,apiSignature});
-
         _CobroDI.IdCobroDI = await _CobroDIService.GrdCobroDIAsync(
             _ReqCobroDI.Moneda,
             _ReqCobroDI.Canal,
@@ -99,6 +96,8 @@ public class CobroDIController : ControllerBase
             //reqCobroDI,
              _CobroDI.IdCobroDI,
             rsValCobroDIResp,
+            _CobroDIResp.Referencia_c,
+            _CobroDIResp.Endtoend,
             _CobroDIResp.CodigoRespuesta,
             _CobroDIResp.DescripcionCliente,
             _CobroDIResp.DescripcionSistema,
@@ -134,12 +133,6 @@ public class CobroDIController : ControllerBase
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-
-                //Debug.WriteLine("codigoRespuest: "+codigoRespuesta);
-                //Debug.WriteLine("descripcionCliente: " + descripcionCliente);
-                //Debug.WriteLine("descripcionSistema : " + descripcionSistema);
-                //Debug.WriteLine("fechaHora : " + fechaHora);
-                //Debug.WriteLine("urlBan: " + urlBan + "/v1/cce/debinm/cobroDI");
 
                 rsDat = await Res.Content.ReadAsStringAsync();
                 _CobroDIResp = JsonConvert.DeserializeObject<CobroDIResp>(rsDat);

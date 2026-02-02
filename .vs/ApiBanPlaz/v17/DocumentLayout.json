@@ -1,89 +1,89 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GITHUB\\ApiBanPlazSqlServer\\",
+  "WorkspaceRootPath": "E:\\GITHUB\\ApiBanPlazSqlServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\cobrodl\\cobrodiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\cobrodl\\cobrodiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\controllers\\cobrodicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\controllers\\cobrodicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:controllers\\cobrodicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\consultardl\\consultardlresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\consultardl\\consultardlresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\controllers\\consultardicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\controllers\\consultardicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:controllers\\consultardicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\consultardl\\consultardlreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\consultardl\\consultardlreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\consultardl\\consultardi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\consultardl\\consultardi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\servicios\\consultardl\\consultardiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\consultardl\\consultardiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\servicios\\tokendl\\tokendiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\tokendl\\tokendiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\controllers\\tokendicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\controllers\\tokendicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:controllers\\tokendicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\tokendl\\tokendiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\servicios\\consultardl\\consultardiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\consultardl\\consultardiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\consultardl\\consultardi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\consultardl\\consultardi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\consultardl\\consultardlreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\consultardl\\consultardlreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\cobrodl\\cobrodiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\cobrodl\\cobrodiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\consultardl\\consultardlresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\consultardl\\consultardlresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\servicios\\tokendl\\tokendiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\tokendl\\tokendiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\tokendl\\tokendiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\tokendl\\tokendiresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\general\\credapirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\general\\credapirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\general\\credapirs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\data\\banplazdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\data\\banplazdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:data\\banplazdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\tokendl\\tokendireq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\tokendl\\tokendireq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\tokendl\\tokendireq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\cobrodl\\cobrodireq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\cobrodl\\cobrodireq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\cobrodl\\cobrodireq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\cobrodl\\cobrodi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\cobrodl\\cobrodi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\cobrodl\\cobrodi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\models\\tokendl\\tokendi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\tokendl\\tokendi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\tokendl\\tokendi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\servicios\\cobrodi\\cobrodiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\servicios\\cobrodi\\cobrodiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\cobrodi\\cobrodiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\servicios\\general\\nonceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\servicios\\general\\nonceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\general\\nonceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\servicios\\tokendl\\debinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\servicios\\tokendl\\debinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:servicios\\tokendl\\debinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|d:\\github\\apibanplazsqlserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -94,91 +94,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TokenDIService.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\TokenDIService.cs",
-              "RelativeDocumentMoniker": "Servicios\\TokenDl\\TokenDIService.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\TokenDIService.cs",
-              "RelativeToolTip": "Servicios\\TokenDl\\TokenDIService.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAIAwwEQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T01:28:57.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "TokenDIController.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\TokenDIController.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\TokenDIController.cs",
               "RelativeDocumentMoniker": "Controllers\\TokenDIController.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\TokenDIController.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\TokenDIController.cs",
               "RelativeToolTip": "Controllers\\TokenDIController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowFEAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T00:12:51.736Z"
+              "WhenOpened": "2026-01-16T00:12:51.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsultarDIController.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\ConsultarDIController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ConsultarDIController.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\ConsultarDIController.cs",
+              "RelativeToolTip": "Controllers\\ConsultarDIController.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAcwJAAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T02:35:02.414Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ConsultarDIController.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\ConsultarDIController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ConsultarDIController.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\ConsultarDIController.cs",
-              "RelativeToolTip": "Controllers\\ConsultarDIController.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAiwJQAAAAnAAAAAAAAAA==",
+              "Title": "ConsultarDIService.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\ConsultarDl\\ConsultarDIService.cs",
+              "RelativeDocumentMoniker": "Servicios\\ConsultarDl\\ConsultarDIService.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\ConsultarDl\\ConsultarDIService.cs",
+              "RelativeToolTip": "Servicios\\ConsultarDl\\ConsultarDIService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAawBUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T02:35:02.414Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ConsultarDlReq.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlReq.cs",
-              "RelativeDocumentMoniker": "models\\ConsultarDl\\ConsultarDlReq.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlReq.cs",
-              "RelativeToolTip": "models\\ConsultarDl\\ConsultarDlReq.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T02:28:17.086Z"
+              "WhenOpened": "2026-01-30T02:12:42.632Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ConsultarDlReq.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlReq.cs",
+              "RelativeDocumentMoniker": "models\\ConsultarDl\\ConsultarDlReq.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlReq.cs",
+              "RelativeToolTip": "models\\ConsultarDl\\ConsultarDlReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T02:28:17.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ConsultarDI.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDI.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDI.cs",
               "RelativeDocumentMoniker": "models\\ConsultarDl\\ConsultarDI.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDI.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDI.cs",
               "RelativeToolTip": "models\\ConsultarDl\\ConsultarDI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T02:27:16.462Z"
+              "WhenOpened": "2026-01-30T02:27:16.462Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T01:04:17.902Z"
+              "WhenOpened": "2026-01-21T01:04:17.902Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ConsultarDlResp.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlResp.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlResp.cs",
               "RelativeDocumentMoniker": "models\\ConsultarDl\\ConsultarDlResp.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlResp.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultarDl\\ConsultarDlResp.cs",
               "RelativeToolTip": "models\\ConsultarDl\\ConsultarDlResp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -186,23 +188,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CobroDIController.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CobroDIController.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CobroDIController.cs",
               "RelativeDocumentMoniker": "Controllers\\CobroDIController.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CobroDIController.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CobroDIController.cs",
               "RelativeToolTip": "Controllers\\CobroDIController.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAwwJAAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowGEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T04:05:08.662Z"
+              "WhenOpened": "2026-01-22T04:05:08.662Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "CobroDIResp.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIResp.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIResp.cs",
               "RelativeDocumentMoniker": "models\\CobroDl\\CobroDIResp.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIResp.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIResp.cs",
               "RelativeToolTip": "models\\CobroDl\\CobroDIResp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -213,9 +216,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "TokenDIResp.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIResp.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIResp.cs",
               "RelativeDocumentMoniker": "models\\TokenDl\\TokenDIResp.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIResp.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIResp.cs",
               "RelativeToolTip": "models\\TokenDl\\TokenDIResp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -225,9 +228,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "TokenDI.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDI.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDI.cs",
               "RelativeDocumentMoniker": "models\\TokenDl\\TokenDI.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDI.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDI.cs",
               "RelativeToolTip": "models\\TokenDl\\TokenDI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -237,9 +240,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "TokenDIReq.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIReq.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIReq.cs",
               "RelativeDocumentMoniker": "models\\TokenDl\\TokenDIReq.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIReq.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\TokenDl\\TokenDIReq.cs",
               "RelativeToolTip": "models\\TokenDl\\TokenDIReq.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -249,9 +252,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "CredApiRs.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\General\\CredApiRs.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\General\\CredApiRs.cs",
               "RelativeDocumentMoniker": "models\\General\\CredApiRs.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\General\\CredApiRs.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\General\\CredApiRs.cs",
               "RelativeToolTip": "models\\General\\CredApiRs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -259,23 +262,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ConsultarDIService.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\ConsultarDl\\ConsultarDIService.cs",
-              "RelativeDocumentMoniker": "Servicios\\ConsultarDl\\ConsultarDIService.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\ConsultarDl\\ConsultarDIService.cs",
-              "RelativeToolTip": "Servicios\\ConsultarDl\\ConsultarDIService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "TokenDIService.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\TokenDIService.cs",
+              "RelativeDocumentMoniker": "Servicios\\TokenDl\\TokenDIService.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\TokenDIService.cs",
+              "RelativeToolTip": "Servicios\\TokenDl\\TokenDIService.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAIAwwEQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T02:12:42.632Z"
+              "WhenOpened": "2026-01-21T01:28:57.462Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "CobroDIReq.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIReq.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIReq.cs",
               "RelativeDocumentMoniker": "models\\CobroDl\\CobroDIReq.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIReq.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDIReq.cs",
               "RelativeToolTip": "models\\CobroDl\\CobroDIReq.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -285,9 +288,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "CobroDI.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDI.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDI.cs",
               "RelativeDocumentMoniker": "models\\CobroDl\\CobroDI.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDI.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CobroDl\\CobroDI.cs",
               "RelativeToolTip": "models\\CobroDl\\CobroDI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -297,9 +300,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "BanPlazDbContext.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Data\\BanPlazDbContext.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Data\\BanPlazDbContext.cs",
               "RelativeDocumentMoniker": "Data\\BanPlazDbContext.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Data\\BanPlazDbContext.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Data\\BanPlazDbContext.cs",
               "RelativeToolTip": "Data\\BanPlazDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -309,9 +312,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "CobroDIService.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\CobroDI\\CobroDIService.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\CobroDI\\CobroDIService.cs",
               "RelativeDocumentMoniker": "Servicios\\CobroDI\\CobroDIService.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\CobroDI\\CobroDIService.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\CobroDI\\CobroDIService.cs",
               "RelativeToolTip": "Servicios\\CobroDI\\CobroDIService.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwB8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -321,9 +324,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "DebinService.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\DebinService.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\DebinService.cs",
               "RelativeDocumentMoniker": "Servicios\\TokenDl\\DebinService.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\DebinService.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\TokenDl\\DebinService.cs",
               "RelativeToolTip": "Servicios\\TokenDl\\DebinService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -333,9 +336,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "NonceService.cs",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\General\\NonceService.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\General\\NonceService.cs",
               "RelativeDocumentMoniker": "Servicios\\General\\NonceService.cs",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\General\\NonceService.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\General\\NonceService.cs",
               "RelativeToolTip": "Servicios\\General\\NonceService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -345,9 +348,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\GITHUB\\ApiBanPlazSqlServer\\appsettings.json",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\GITHUB\\ApiBanPlazSqlServer\\appsettings.json",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
