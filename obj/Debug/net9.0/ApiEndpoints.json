@@ -49,7 +49,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "prmJson",
+        "Name": "prmId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmQryString",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -135,11 +140,42 @@
   {
     "ContainingType": "ConsultarDIController",
     "Method": "ConsultarDI",
-    "RelativePath": "v1/cce/debinm/ConsultarDl",
-    "HttpMethod": "POST",
+    "RelativePath": "v1/cce/debinm/consultarDI/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cuenta_cobrador",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "endtoend",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "referencia_c",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "monto",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "canal",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
