@@ -187,5 +187,56 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PagosP2pController",
+    "Method": "ProcPagosP2p",
+    "RelativePath": "v1/pagos",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.PagosP2p.PagosP2pResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PagosP2pController",
+    "Method": "PagosP2p",
+    "RelativePath": "v1/pagos/PagosP2p",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

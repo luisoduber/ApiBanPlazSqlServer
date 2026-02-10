@@ -34,7 +34,6 @@ namespace ApiBanPlaz.models.TokenDl
 
         [Required]
         public decimal Monto { get; set; }
-
         public string? Direccion_ip { get; set; }
     }
 }

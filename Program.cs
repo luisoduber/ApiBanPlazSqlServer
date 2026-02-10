@@ -1,7 +1,8 @@
 using ApiBanPlaz.Servicios.CobroDl;
-using ApiBanPlaz.Servicios.General;
-using ApiBanPlaz.Servicios.TokenDl;
 using ApiBanPlaz.Servicios.ConsultarDl;
+using ApiBanPlaz.Servicios.General;
+using ApiBanPlaz.Servicios.PagosP2p;
+using ApiBanPlaz.Servicios.TokenDl;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +26,7 @@ builder.Services.AddScoped<NonceService>();
 builder.Services.AddScoped<TokenDIService>();
 builder.Services.AddScoped<CobroDIService>();
 builder.Services.AddScoped<ConsultarDlService>();
-
+builder.Services.AddScoped<PagosP2pService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

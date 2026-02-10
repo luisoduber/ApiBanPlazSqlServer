@@ -1,10 +1,11 @@
-﻿using ApiBanPlaz.models.Entities;
+﻿using ApiBanPlaz.models.CobroDI;
+using ApiBanPlaz.models.ConsultarDl;
+using ApiBanPlaz.models.Entities;
+using ApiBanPlaz.models.General;
+using ApiBanPlaz.models.PagosP2p;
 using ApiBanPlaz.models.Responses;
 using ApiBanPlaz.models.TokenDl;
-using ApiBanPlaz.models.CobroDI;
-using ApiBanPlaz.models.ConsultarDl;
 using Microsoft.EntityFrameworkCore;
-using ApiBanPlaz.models.General;
 
 public class BanPlazDbContext : DbContext
 {
@@ -22,8 +23,9 @@ public class BanPlazDbContext : DbContext
         modelBuilder.Entity<ConsultarDI>().HasNoKey();
         modelBuilder.Entity<TokenDI>().HasNoKey();
         modelBuilder.Entity<CobroDI>().HasNoKey();
-    }
+        modelBuilder.Entity<PagosP2p>().HasNoKey();
 
+    }
 
     // DbSet vacío solo para ejecutar SP
    // public DbSet<DebinResult> DebinResults { get; set; }
