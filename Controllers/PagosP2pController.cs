@@ -51,7 +51,7 @@ public class PagosP2pController : ControllerBase
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
 
-        string path = "/v1/pagos/p2p";
+        string path = "v1/pagos/p2p";
         string apiSignature = ApiSignatureGen.Generar(
             path,
             nonce,
@@ -60,6 +60,15 @@ public class PagosP2pController : ControllerBase
         );
 
         _PagosP2pResp = await ProcPagosP2p(reqPagosP2p, cred.ApiKey, apiSignature, nonce);
+
+        return Ok(new
+        {
+            _PagosP2pResp.CodigoRespuesta,
+            _PagosP2pResp.DescripcionCliente,
+            _PagosP2pResp.DescripcionSistema,
+            _PagosP2pResp.FechaHora
+        });
+
         _PagosP2p.IdPagosP2p = await _PagosP2pService.spGrdPagosP2pReq(
              _ReqPagosP2p.Banco,
              _ReqPagosP2p.IdBeneficiario,
@@ -111,8 +120,6 @@ public class PagosP2pController : ControllerBase
         string descripcionCliente = "";
         string descripcionSistema = "";
         string fechaHora = "";
-        string referencia_c = "";
-        string endtoend = "";
 
         using (var client = new HttpClient())
         {
@@ -122,10 +129,15 @@ public class PagosP2pController : ControllerBase
             client.DefaultRequestHeaders.Add("api-key", prmApiKey);
             client.DefaultRequestHeaders.Add("api-signature", prmApiSignature);
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
+
+
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
 
-            Debug.WriteLine(urlBan +"v1/pagos/p2p");
+
+            Debug.WriteLine("api-key:", prmApiKey);
+            Debug.WriteLine("api-signature:", prmApiSignature);
+            Debug.WriteLine("nonce:", prmNonce);
             using (var Res = await client.PostAsync("v1/pagos/p2p", content))
             {
                 if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta = values.FirstOrDefault(); }
@@ -134,7 +146,11 @@ public class PagosP2pController : ControllerBase
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
 
                 rsDat = await Res.Content.ReadAsStringAsync();
-                _PagosP2pResp = JsonConvert.DeserializeObject<PagosP2pResp>(rsDat);
+
+                if (!string.IsNullOrEmpty(rsDat))
+                {
+                    _PagosP2pResp = JsonConvert.DeserializeObject<PagosP2pResp>(rsDat);
+                }
 
                 _PagosP2pResp.CodigoRespuesta = codigoRespuesta;
                 _PagosP2pResp.DescripcionCliente = descripcionCliente;

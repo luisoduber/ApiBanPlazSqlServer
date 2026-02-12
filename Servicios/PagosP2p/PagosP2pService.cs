@@ -69,6 +69,7 @@ namespace ApiBanPlaz.Servicios.PagosP2p
              new SqlParameter("@prmCanal", prmCanal),
              new SqlParameter("@prmIdExterno", prmIdExterno),
              new SqlParameter("@prmCuenta", prmCuenta),
+             new SqlParameter("@prmTelefonoAfiliado", prmTelefonoAfiliado),
              new SqlParameter("@prmMoneda", prmMoneda),
              new SqlParameter("@prmSucursal", prmSucursal),
              new SqlParameter("@prmCajero", prmCajero),
