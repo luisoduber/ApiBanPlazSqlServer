@@ -10,7 +10,7 @@ namespace ApiBanPlaz.models.PagosP2p
         public Decimal Monto{ get; set; }
         public string Motivo { get; set; }
         public string Canal{ get; set; }
-        public string? IdExterno { get; set; }
+        public string? IdExterno { get; set; } = null!;
         public string? Cuenta{ get; set; }
         public string? TelefonoAfiliado { get; set; }
         public string? Moneda { get; set; }

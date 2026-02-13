@@ -3,13 +3,10 @@ using ApiBanPlaz.models.Entities;
 using ApiBanPlaz.Servicios.PagosP2p;
 using ApiBanPlaz.Servicios.General;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
-using System.Security.Cryptography.Xml;
 using System.Text;
 
 [ApiController]
@@ -61,13 +58,17 @@ public class PagosP2pController : ControllerBase
 
         _PagosP2pResp = await ProcPagosP2p(reqPagosP2p, cred.ApiKey, apiSignature, nonce);
 
-        return Ok(new
-        {
-            _PagosP2pResp.CodigoRespuesta,
-            _PagosP2pResp.DescripcionCliente,
-            _PagosP2pResp.DescripcionSistema,
-            _PagosP2pResp.FechaHora
-        });
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.IdExterno)) { _ReqPagosP2p.IdExterno = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Cuenta)) { _ReqPagosP2p.Cuenta = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Moneda)) { _ReqPagosP2p.Moneda = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Sucursal)) { _ReqPagosP2p.Sucursal = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Cajero)) { _ReqPagosP2p.Cajero = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Caja)) { _ReqPagosP2p.Caja = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.IpCliente)) { _ReqPagosP2p.IpCliente = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Longitud)) { _ReqPagosP2p.Longitud = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Latitud)) { _ReqPagosP2p.Latitud = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqPagosP2p.Precision)) { _ReqPagosP2p.Precision = ""; }
+
 
         _PagosP2p.IdPagosP2p = await _PagosP2pService.spGrdPagosP2pReq(
              _ReqPagosP2p.Banco,
@@ -101,9 +102,8 @@ public class PagosP2pController : ControllerBase
 
         return Ok(new
         {
-            //reqCobroDI,
             _PagosP2p.IdPagosP2p,
-             rsValPagosP2pResp,
+            rsValPagosP2pResp,
             _PagosP2pResp.NumeroReferencia,
             _PagosP2pResp.CodigoRespuesta,
             _PagosP2pResp.DescripcionCliente,
@@ -129,11 +129,7 @@ public class PagosP2pController : ControllerBase
             client.DefaultRequestHeaders.Add("api-key", prmApiKey);
             client.DefaultRequestHeaders.Add("api-signature", prmApiSignature);
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
-
-
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-
 
             Debug.WriteLine("api-key:", prmApiKey);
             Debug.WriteLine("api-signature:", prmApiSignature);
@@ -146,13 +142,13 @@ public class PagosP2pController : ControllerBase
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
 
                 rsDat = await Res.Content.ReadAsStringAsync();
-
                 if (!string.IsNullOrEmpty(rsDat))
                 {
                     _PagosP2pResp = JsonConvert.DeserializeObject<PagosP2pResp>(rsDat);
                 }
+                else { _PagosP2pResp.NumeroReferencia = "";  }
 
-                _PagosP2pResp.CodigoRespuesta = codigoRespuesta;
+                 _PagosP2pResp.CodigoRespuesta = codigoRespuesta;
                 _PagosP2pResp.DescripcionCliente = descripcionCliente;
                 _PagosP2pResp.DescripcionSistema = descripcionSistema;
                 _PagosP2pResp.FechaHora = DateTime.Parse(fechaHora);
