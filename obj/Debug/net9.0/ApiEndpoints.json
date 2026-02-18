@@ -1,5 +1,92 @@
 [
   {
+    "ContainingType": "Pagos0Controller",
+    "Method": "ProcPagos0",
+    "RelativePath": "v1/cce",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.Pagos0.Pagos0Resp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pagos0Controller",
+    "Method": "ProcPagos0Rif",
+    "RelativePath": "v1/cce",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.Pagos0.Pagos0Resp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CobroDIController",
     "Method": "SolTokenDI",
     "RelativePath": "v1/cce/debinm",
@@ -189,6 +276,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Pagos0Controller",
+    "Method": "Pagos0",
+    "RelativePath": "v1/cce/Pagos0",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Pagos0Controller",
+    "Method": "Pagos0Rif",
+    "RelativePath": "v1/cce/Pagos0/{prmRif}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PagosP2pController",
     "Method": "ProcPagosP2p",
     "RelativePath": "v1/pagos",
@@ -231,12 +344,74 @@
   },
   {
     "ContainingType": "PagosP2pController",
+    "Method": "ProcPagosP2pRif",
+    "RelativePath": "v1/pagos",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.PagosP2p.PagosP2pResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PagosP2pController",
     "Method": "PagosP2p",
     "RelativePath": "v1/pagos/PagosP2p",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PagosP2pController",
+    "Method": "PagosP2pRif",
+    "RelativePath": "v1/pagos/PagosP2p/{prmRif}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

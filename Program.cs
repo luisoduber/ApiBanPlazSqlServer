@@ -1,9 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using ApiBanPlaz.Servicios.CobroDl;
 using ApiBanPlaz.Servicios.ConsultarDl;
 using ApiBanPlaz.Servicios.General;
+using ApiBanPlaz.Servicios.Pagos0;
 using ApiBanPlaz.Servicios.PagosP2p;
 using ApiBanPlaz.Servicios.TokenDl;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -24,11 +25,11 @@ builder.Services.AddDbContext<BanPlazDbContext>(options =>
 
 builder.Services.AddScoped<CredApiRsService>();
 builder.Services.AddScoped<NonceService>();
-
 builder.Services.AddScoped<TokenDIService>();
 builder.Services.AddScoped<CobroDIService>();
 builder.Services.AddScoped<ConsultarDlService>();
 builder.Services.AddScoped<PagosP2pService>();
+builder.Services.AddScoped<Pagos0Service>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 
 using ApiBanPlaz.models.TokenDl;
-using ApiBanPlaz.models.Responses;
 
 namespace ApiBanPlaz.Servicios.TokenDl
 {
