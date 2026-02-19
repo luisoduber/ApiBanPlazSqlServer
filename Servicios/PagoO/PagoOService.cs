@@ -1,22 +1,19 @@
-﻿using ApiBanPlaz.models.Entities;
-using ApiBanPlaz.models.Pagos0;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
-namespace ApiBanPlaz.Servicios.Pagos0
+namespace ApiBanPlaz.Servicios.PagoO
 {
-    public class Pagos0Service
+    public class PagoOService
     {
         private readonly BanPlazDbContext _context;
 
-        public Pagos0Service(BanPlazDbContext context)
+        public PagoOService(BanPlazDbContext context)
         {
             _context = context;
         }
 
-        public async Task<int> spGrdPagos0Req(
+        public async Task<int> spGrdPagoOReq(
         string prmMoneda,
         string prmCanal,
         string prmTipo_cce,
@@ -92,8 +89,8 @@ namespace ApiBanPlaz.Servicios.Pagos0
             return id.First();
         }
 
-        public async Task<bool> spGrdPagos0Resp(
-               int prmIdPagos0,
+        public async Task<bool> spGrdPagoOResp(
+               int prmIdPagoO,
                string prmCodigoRespuesta,
                string prmDescripcionCliente,
                string prmDescripcionSistema,
@@ -115,7 +112,7 @@ namespace ApiBanPlaz.Servicios.Pagos0
 
                 var rows = await _context.Database.ExecuteSqlRawAsync(
                     sql,
-                    new SqlParameter("@prmIdPagos0", prmIdPagos0),
+                    new SqlParameter("@prmIdPagos0", prmIdPagoO),
                     new SqlParameter("@prmCodigoRespuesta", prmCodigoRespuesta),
                     new SqlParameter("@prmDescripcionCliente", prmDescripcionCliente),
                     new SqlParameter("@prmDescripcionSistema", prmDescripcionSistema),

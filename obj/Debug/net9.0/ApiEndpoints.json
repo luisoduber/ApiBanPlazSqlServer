@@ -1,7 +1,7 @@
 [
   {
-    "ContainingType": "Pagos0Controller",
-    "Method": "ProcPagos0",
+    "ContainingType": "PagoOController",
+    "Method": "ProcPagoO",
     "RelativePath": "v1/cce",
     "HttpMethod": "",
     "IsController": true,
@@ -30,7 +30,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiBanPlaz.models.Pagos0.Pagos0Resp",
+        "Type": "ApiBanPlaz.models.PagoO.PagoOResp",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -41,8 +41,8 @@
     ]
   },
   {
-    "ContainingType": "Pagos0Controller",
-    "Method": "ProcPagos0Rif",
+    "ContainingType": "PagoOController",
+    "Method": "ProcPagoORif",
     "RelativePath": "v1/cce",
     "HttpMethod": "",
     "IsController": true,
@@ -76,7 +76,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiBanPlaz.models.Pagos0.Pagos0Resp",
+        "Type": "ApiBanPlaz.models.PagoO.PagoOResp",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -276,9 +276,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Pagos0Controller",
-    "Method": "Pagos0",
-    "RelativePath": "v1/cce/Pagos0",
+    "ContainingType": "PagoOController",
+    "Method": "PagoO",
+    "RelativePath": "v1/cce/PagoO",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -286,9 +286,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Pagos0Controller",
-    "Method": "Pagos0Rif",
-    "RelativePath": "v1/cce/Pagos0/{prmRif}",
+    "ContainingType": "PagoOController",
+    "Method": "PagoORif",
+    "RelativePath": "v1/cce/PagoO/{prmRif}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

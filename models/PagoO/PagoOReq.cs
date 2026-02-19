@@ -1,6 +1,6 @@
-﻿namespace ApiBanPlaz.models.Pagos0
+﻿namespace ApiBanPlaz.models.PagoO
 {
-    public class Pagos0Req
+    public class PagoOReq
     {
         public string Moneda { get; set; }
         public string Canal { get; set; }
