@@ -20,7 +20,7 @@ namespace ApiBanPlaz.models.ConsultarDl
         [Required]
         public decimal Monto { get; set; }
         [Required]
-        public string? canal { get; set; }
+        public string canal { get; set; }
 
     }
 }

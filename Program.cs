@@ -1,5 +1,6 @@
 using ApiBanPlaz.Servicios.CobroDl;
 using ApiBanPlaz.Servicios.ConsultarDl;
+using ApiBanPlaz.Servicios.ConsultaLiq;
 using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.PagoO;
 using ApiBanPlaz.Servicios.PagosP2p;
@@ -30,6 +31,7 @@ builder.Services.AddScoped<CobroDIService>();
 builder.Services.AddScoped<ConsultarDlService>();
 builder.Services.AddScoped<PagosP2pService>();
 builder.Services.AddScoped<PagoOService>();
+builder.Services.AddScoped<ConsultaLiqService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

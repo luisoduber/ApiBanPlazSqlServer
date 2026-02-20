@@ -4,6 +4,7 @@ using ApiBanPlaz.models.Entities;
 using ApiBanPlaz.models.General;
 using ApiBanPlaz.models.PagosP2p;
 using ApiBanPlaz.models.PagoO;
+using ApiBanPlaz.models.ConsultaLiq;
 using ApiBanPlaz.models.TokenDl;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,7 @@ public class BanPlazDbContext : DbContext
         modelBuilder.Entity<CobroDI>().HasNoKey();
         modelBuilder.Entity<PagosP2p>().HasNoKey();
         modelBuilder.Entity<PagoO>().HasNoKey();
+        modelBuilder.Entity<ConsultaLiq>().HasNoKey();
     }
 
     // DbSet vacío solo para ejecutar SP

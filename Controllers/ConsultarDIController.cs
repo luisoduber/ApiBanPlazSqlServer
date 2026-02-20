@@ -129,11 +129,6 @@ public class ConsultarDIController : ControllerBase
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-
-            Debug.WriteLine($"prmApiKey: {prmApiKey}");
-            Debug.WriteLine($"prmApiSignature: {prmApiSignature}");
-            Debug.WriteLine($"prmNonce: {prmNonce}");
-
             Debug.WriteLine($"{urlBan}v1/cce/debinm/consultarDI/{prmId}{prmQryString}");
             using (var Res = await client.GetAsync($"v1/cce/debinm/consultarDI/{prmId}{prmQryString}"))
             {
