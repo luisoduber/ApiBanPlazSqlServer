@@ -133,7 +133,6 @@ public class ConsultarDIController : ControllerBase
             using (var Res = await client.GetAsync($"v1/cce/debinm/consultarDI/{prmId}{prmQryString}"))
             {
 
-                Debug.WriteLine("respuesta: "+Res.IsSuccessStatusCode);
                 if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta= values.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }

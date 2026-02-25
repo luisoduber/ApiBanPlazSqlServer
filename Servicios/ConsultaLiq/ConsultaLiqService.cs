@@ -26,7 +26,7 @@ namespace ApiBanPlaz.Servicios.ConsultaLiq
 
         {
             var sql = @"
-            EXEC spGrdConsultarDIReq
+            EXEC spGrdConsultaLiqReq
             @prmId,
             @prmCuenta,
             @prmReferencia,
