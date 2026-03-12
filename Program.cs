@@ -5,16 +5,11 @@ using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.PagoO;
 using ApiBanPlaz.Servicios.PagosP2p;
 using ApiBanPlaz.Servicios.TokenDl;
-using Microsoft.AspNetCore.Mvc;
+using ApiBanPlaz.Servicios.CompPm;
 using Microsoft.EntityFrameworkCore;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<BanPlazDbContext>(options =>
@@ -32,18 +27,11 @@ builder.Services.AddScoped<ConsultarDlService>();
 builder.Services.AddScoped<PagosP2pService>();
 builder.Services.AddScoped<PagoOService>();
 builder.Services.AddScoped<ConsultaLiqService>();
+builder.Services.AddScoped<CompPmService>();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
+if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

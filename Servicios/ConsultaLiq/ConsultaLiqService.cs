@@ -9,7 +9,6 @@ namespace ApiBanPlaz.Servicios.ConsultaLiq
     public class ConsultaLiqService
     {
         private readonly BanPlazDbContext _context;
-
         public ConsultaLiqService(BanPlazDbContext context)
         {
             _context = context;
