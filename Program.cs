@@ -6,6 +6,8 @@ using ApiBanPlaz.Servicios.PagoO;
 using ApiBanPlaz.Servicios.PagosP2p;
 using ApiBanPlaz.Servicios.TokenDl;
 using ApiBanPlaz.Servicios.CompPm;
+using ApiBanPlaz.Servicios.Operacion;
+using ApiBanPlaz.Servicios.Operaciones;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +30,8 @@ builder.Services.AddScoped<PagosP2pService>();
 builder.Services.AddScoped<PagoOService>();
 builder.Services.AddScoped<ConsultaLiqService>();
 builder.Services.AddScoped<CompPmService>();
+builder.Services.AddScoped<OperacionService>();
+builder.Services.AddScoped<OperacionesService>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApiBanPlaz.models.operacion
+namespace ApiBanPlaz.models.Operacion
 {
     public class OperacionReq
     {

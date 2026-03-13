@@ -1,8 +1,8 @@
-﻿namespace ApiBanPlaz.models.Operacion
+﻿namespace ApiBanPlaz.models.Operaciones
 {
-    public class OpeMovimientos
+    public class OperacionesMov
     {
-        public int IdOperacion { get; set; }
+        public int IdOperaciones { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
         public string Referencia { get; set; }

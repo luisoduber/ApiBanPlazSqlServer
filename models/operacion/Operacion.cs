@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ApiBanPlaz.models.operacion
+namespace ApiBanPlaz.models.Operacion
 {
     [Keyless]
     public class Operacion
