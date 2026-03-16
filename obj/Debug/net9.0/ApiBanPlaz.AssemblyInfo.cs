@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiBanPlaz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa922fd1df7e633012aff030c8f8eec685935b63")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4260f677c1da183853d477b726d2e8185be2cdd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiBanPlaz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiBanPlaz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

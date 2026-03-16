@@ -43,7 +43,7 @@ public class ConsultaLiqController : ControllerBase
         [FromQuery] string canal)
 
     {
-        string queryStringLiq = "";
+        string qryStringLiq = "";
         string nonce = await _nonceService.ObtNonce();
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
@@ -55,14 +55,14 @@ public class ConsultaLiqController : ControllerBase
             cred.apiKeySecret
         );
 
-        queryStringLiq =
+        qryStringLiq =
                        "?cuenta=" + cuenta +
                        "&referencia=" + referencia +
                        "&monto=" + monto.ToString().Replace(",", ".") +
                        "&fecha=" + fecha +
                        "&canal=" + canal.ToString();
 
-        _ConsultaLiqResp = await SolConsultaLiq(id, queryStringLiq, cred.ApiKey, apiSignature, nonce);
+        _ConsultaLiqResp = await SolConsultaLiq(id, qryStringLiq, cred.ApiKey, apiSignature, nonce);
         _ConsultaLiqReq.Id = id;
         _ConsultaLiqReq.Cuenta = cuenta;
         _ConsultaLiqReq.Referencia = referencia;
@@ -77,7 +77,7 @@ public class ConsultaLiqController : ControllerBase
              _ConsultaLiqReq.Monto,
              _ConsultaLiqReq.fecha,
              _ConsultaLiqReq.canal,
-            queryStringLiq
+            qryStringLiq
             );
 
         string jsonConsultaLiqResp = JsonConvert.SerializeObject(_ConsultaLiqResp);

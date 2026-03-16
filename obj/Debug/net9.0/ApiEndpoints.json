@@ -1,5 +1,107 @@
 [
   {
+    "ContainingType": "CompPmController",
+    "Method": "SolCompPm",
+    "RelativePath": " /v1/pagos",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmQryString",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CompPm.CompPmResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CompPmController",
+    "Method": "p2p",
+    "RelativePath": " /v1/pagos/p2p/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "canal",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "acc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fi",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "ff",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "tlf",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tlfa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "horaIni",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "horaFin",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ConsultaLiqController",
     "Method": "SolConsultaLiq",
     "RelativePath": "v1/cce",

@@ -2,9 +2,8 @@
 
 namespace ApiBanPlaz.models.CompPm
 {
-    public class CompPmPag
+    public class pago
     {
-        public int IdCompPm { get; set; }
         public string Accion { get; set; }
         public string Banco { get; set; }
         public string TelefonoCliente { get; set; }
@@ -14,5 +13,12 @@ namespace ApiBanPlaz.models.CompPm
         public string Hora { get; set; }
         public string Referencia { get; set; }
         public string Motivo { get; set; }
+    }
+
+
+    public class CompPmPag
+    {
+        public int cantidadPagos { get; set; }
+        public List<pago> pagos { get; set; }
     }
 }
