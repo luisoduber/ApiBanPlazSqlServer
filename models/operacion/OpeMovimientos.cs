@@ -1,8 +1,7 @@
 ﻿namespace ApiBanPlaz.models.Operacion
 {
-    public class OpeMovimientos
+    public class Movimiento
     {
-        public int IdOperacion { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
         public string Referencia { get; set; }
@@ -11,4 +10,9 @@
         public string Naturaleza { get; set; }
         public decimal Monto { get; set; }
     }
+    public class OpeMovimientos
+    {
+        public List<Movimiento> movimientos { get; set; }
+    }
+
 }

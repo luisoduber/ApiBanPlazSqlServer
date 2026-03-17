@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 [ApiController]
-[Route(" /v1/pagos")]
+[Route("v1/pagos")]
 public class CompPmController : ControllerBase
 {
     private readonly NonceService _nonceService;
@@ -93,8 +93,7 @@ public class CompPmController : ControllerBase
         _CompPmResp.DescripcionCliente,
         _CompPmResp.DescripcionSistema,
         _CompPmResp.FechaHora,
-        0,
-        //_CompPmResp.cantidadPagos,
+        _CompPmResp.cantidadPagos,
         jsonCompPmResp);
 
         bool rsValCompPmPag = false;

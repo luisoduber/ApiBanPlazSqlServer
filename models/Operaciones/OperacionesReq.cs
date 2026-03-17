@@ -8,39 +8,39 @@ namespace ApiBanPlaz.models.Operaciones
         public string Rif_cliente { get; set; }
 
         [StringLength(20)]
-        public string prmCuenta { get; set; }
+        public string Cuenta { get; set; }
 
         [StringLength(4)]
-        public string prmMoneda { get; set; }
+        public string Moneda { get; set; }
 
         [StringLength(4)]
-        public string prmTPago { get; set; }
+        public string TPago { get; set; }
 
         [StringLength(2)]
-        public string prmNaturaleza { get; set; }
+        public string Naturaleza { get; set; }
 
         [StringLength(10)]
-        public string prmFechaInicio { get; set; }
+        public string FechaInicio { get; set; }
 
         [StringLength(10)]
-        public string prmFechaFin { get; set; }
+        public string FechaFin { get; set; }
 
         [StringLength(10)]
-        public string prmCanal { get; set; }
+        public string Canal { get; set; }
 
         [StringLength(10)]
-        public string prmId { get; set; }
+        public string Id { get; set; }
 
         [StringLength(4)]
-        public string prmBanco { get; set; }
+        public string Banco { get; set; }
 
         [StringLength(12)]
-        public string prmReferencia { get; set; }
-        public decimal prmMontoMinimo { get; set; }
-        public decimal prmMontoMaximo { get; set; }
+        public string Referencia { get; set; }
+        public decimal MontoMinimo { get; set; }
+        public decimal MontoMaximo { get; set; }
 
         [StringLength(20)]
-        public string prmDireccion_ip { get; set; }
+        public string Direccion_ip { get; set; }
 
     }
 }
