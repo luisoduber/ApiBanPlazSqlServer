@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\GITHUB\\ApiBanPlazSqlServer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\controllers\\pagosp2pcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:controllers\\pagosp2pcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -85,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\models\\comppm\\comppmresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:models\\comppm\\comppmresp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{478511EF-4291-437A-8EB6-6D6F2800DAAF}|ApiBanPlaz.csproj|e:\\github\\apibanplazsqlserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -218,23 +218,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OperacionesResp.cs",
-              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operaciones\\OperacionesResp.cs",
-              "RelativeDocumentMoniker": "models\\Operaciones\\OperacionesResp.cs",
-              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operaciones\\OperacionesResp.cs",
-              "RelativeToolTip": "models\\Operaciones\\OperacionesResp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:58:27.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "OperacionesService.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\Operaciones\\OperacionesService.cs",
               "RelativeDocumentMoniker": "Servicios\\Operaciones\\OperacionesService.cs",
@@ -246,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CompPmController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CompPmController.cs",
               "RelativeDocumentMoniker": "Controllers\\CompPmController.cs",
@@ -254,12 +242,11 @@
               "RelativeToolTip": "Controllers\\CompPmController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAkwIgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T18:09:37.457Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T18:09:37.457Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ConsultaLiqController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\ConsultaLiqController.cs",
               "RelativeDocumentMoniker": "Controllers\\ConsultaLiqController.cs",
@@ -267,12 +254,11 @@
               "RelativeToolTip": "Controllers\\ConsultaLiqController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T01:39:24.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-20T01:39:24.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PagoOController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\PagoOController.cs",
               "RelativeDocumentMoniker": "Controllers\\PagoOController.cs",
@@ -280,12 +266,11 @@
               "RelativeToolTip": "Controllers\\PagoOController.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAtwNUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T21:17:34.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T21:17:34.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CompPmReq.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CompPm\\CompPmReq.cs",
               "RelativeDocumentMoniker": "models\\CompPm\\CompPmReq.cs",
@@ -293,12 +278,11 @@
               "RelativeToolTip": "models\\CompPm\\CompPmReq.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T19:50:41.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T19:50:41.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CompPm.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CompPm\\CompPm.cs",
               "RelativeDocumentMoniker": "models\\CompPm\\CompPm.cs",
@@ -306,12 +290,11 @@
               "RelativeToolTip": "models\\CompPm\\CompPm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T20:26:40.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T20:26:40.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CompPmPag.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CompPm\\CompPmPag.cs",
               "RelativeDocumentMoniker": "models\\CompPm\\CompPmPag.cs",
@@ -319,25 +302,24 @@
               "RelativeToolTip": "models\\CompPm\\CompPmPag.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T19:50:23.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T19:50:23.188Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PagosP2pController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\PagosP2pController.cs",
               "RelativeDocumentMoniker": "Controllers\\PagosP2pController.cs",
               "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\PagosP2pController.cs",
               "RelativeToolTip": "Controllers\\PagosP2pController.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAowIIAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAADgv9gAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T21:42:19.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ConsultaLiq.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\ConsultaLiq\\ConsultaLiq.cs",
               "RelativeDocumentMoniker": "models\\ConsultaLiq\\ConsultaLiq.cs",
@@ -349,7 +331,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAADgvygAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T01:04:17.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OperacionesResp.cs",
+              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operaciones\\OperacionesResp.cs",
+              "RelativeDocumentMoniker": "models\\Operaciones\\OperacionesResp.cs",
+              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operaciones\\OperacionesResp.cs",
+              "RelativeToolTip": "models\\Operaciones\\OperacionesResp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:58:27.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "CobroDIController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CobroDIController.cs",
               "RelativeDocumentMoniker": "Controllers\\CobroDIController.cs",
@@ -361,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "OperacionReq.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operacion\\OperacionReq.cs",
               "RelativeDocumentMoniker": "models\\Operacion\\OperacionReq.cs",
@@ -373,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "OperacionController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\OperacionController.cs",
               "RelativeDocumentMoniker": "Controllers\\OperacionController.cs",
@@ -385,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "OperacionesReq.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operaciones\\OperacionesReq.cs",
               "RelativeDocumentMoniker": "models\\Operaciones\\OperacionesReq.cs",
@@ -397,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "OperacionesController.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\OperacionesController.cs",
               "RelativeDocumentMoniker": "Controllers\\OperacionesController.cs",
@@ -405,12 +412,11 @@
               "RelativeToolTip": "Controllers\\OperacionesController.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAiwGsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T19:45:08.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T19:45:08.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "OperacionesMov.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operaciones\\OperacionesMov.cs",
               "RelativeDocumentMoniker": "models\\Operaciones\\OperacionesMov.cs",
@@ -422,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "OperacionResp.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operacion\\OperacionResp.cs",
               "RelativeDocumentMoniker": "models\\Operacion\\OperacionResp.cs",
@@ -434,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "OperacionService.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\Operacion\\OperacionService.cs",
               "RelativeDocumentMoniker": "Servicios\\Operacion\\OperacionService.cs",
@@ -446,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "OpeMovimientos.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\Operacion\\OpeMovimientos.cs",
               "RelativeDocumentMoniker": "models\\Operacion\\OpeMovimientos.cs",
@@ -458,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CompPmService.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Servicios\\CompPm\\CompPmService.cs",
               "RelativeDocumentMoniker": "Servicios\\CompPm\\CompPmService.cs",
@@ -470,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "CompPmResp.cs",
               "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\models\\CompPm\\CompPmResp.cs",
               "RelativeDocumentMoniker": "models\\CompPm\\CompPmResp.cs",
@@ -491,18 +497,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-01-21T01:04:14.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\GITHUB\\ApiBanPlazSqlServer\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T01:04:17.902Z"
             },
             {
               "$type": "Document",

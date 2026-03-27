@@ -222,6 +222,7 @@ public class PagosP2pController : ControllerBase
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
 
                 rsDat = await Res.Content.ReadAsStringAsync();
+                Debug.WriteLine(" rsDat:", rsDat);
                 if (!string.IsNullOrEmpty(rsDat))
                 {
                     _PagosP2pResp = JsonConvert.DeserializeObject<PagosP2pResp>(rsDat);
