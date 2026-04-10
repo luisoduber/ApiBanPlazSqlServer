@@ -40,27 +40,30 @@ public class CompPmController : ControllerBase
     [HttpGet("p2p/{id}")]
     public async Task<IActionResult> p2pId(string id,
         [FromQuery] string canal,
-        [FromQuery] string acc,
-        [FromQuery] DateTime fi,
-        [FromQuery] DateTime ff,
-        [FromQuery] string tlf,
-        [FromQuery] string tlfa,
-        [FromQuery] string horaIni,
-        [FromQuery] string horaFin
+        [FromQuery] string? acc,
+        [FromQuery] DateTime? fi,
+        [FromQuery] DateTime? ff,
+        [FromQuery] string? tlf,
+        [FromQuery] string? tlfa,
+        [FromQuery] string? horaIni,
+        [FromQuery] string? horaFin
         )
     {
-
         string qryStringCompPm = "";
         string nonce = await _nonceService.ObtNonce();
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
 
-        string path = "/v1/pagos/p2p";
+        string path = "v1/pagos/p2p";
         string apiSignature = ApiSignatureGen.Generar(
             path,
             nonce,
             cred.apiKeySecret
         );
+
+        if (!string.IsNullOrEmpty(canal)) { qryStringCompPm = "?canal=" + canal; }
+
+        Debug.WriteLine("hola 4" + qryStringCompPm);
 
         qryStringCompPm =
                "?canal=" + canal +
@@ -71,6 +74,18 @@ public class CompPmController : ControllerBase
                "&tlfa=" + tlfa +
                "&horaIni=" + horaIni +
                "&horaFin=" + horaFin;
+
+        Debug.WriteLine("hola "+qryStringCompPm);
+
+        return Ok(new
+        {
+            qryStringCompPm
+
+        });
+
+
+        if (string.IsNullOrWhiteSpace(_CompPmReq.tlf)) { _CompPmReq.tlf = ""; }
+        if (string.IsNullOrWhiteSpace(_CompPmReq.tlfa)) { _CompPmReq.tlfa = ""; }
 
         _CompPmResp = await SolCompPm(id, qryStringCompPm, cred.ApiKey, apiSignature, nonce);
         _CompPm.idCompPm = await _CompPmService.GrdCompPmReq(
@@ -133,104 +148,6 @@ public class CompPmController : ControllerBase
 
         });
     }
-
-    [HttpGet("p2p/")]
-    public async Task<IActionResult> p2p(string id,
-       [FromQuery] string canal,
-       [FromQuery] string acc,
-       [FromQuery] DateTime fi,
-       [FromQuery] DateTime ff,
-       [FromQuery] string tlf,
-       [FromQuery] string tlfa,
-       [FromQuery] string horaIni,
-       [FromQuery] string horaFin
-       )
-    {
-
-        string qryStringCompPm = "";
-        string nonce = await _nonceService.ObtNonce();
-        var cred = await _credApiRsService.ObtCredApi();
-        if (cred == null) return NotFound();
-
-        string path = "/v1/pagos/p2p";
-        string apiSignature = ApiSignatureGen.Generar(
-            path,
-            nonce,
-            cred.apiKeySecret
-        );
-
-        qryStringCompPm =
-               "?canal=" + canal +
-               "&acc=" + acc +
-               "&fi=" + Convert.ToDateTime(fi).ToString("yyyy-MM-dd") +
-               "&ff=" + Convert.ToDateTime(ff).ToString("yyyy-MM-dd") +
-               "&tlf=" + tlf +
-               "&tlfa=" + tlfa +
-               "&horaIni=" + horaIni +
-               "&horaFin=" + horaFin;
-
-        _CompPmResp = await SolCompPm(id, qryStringCompPm, cred.ApiKey, apiSignature, nonce);
-        _CompPm.idCompPm = await _CompPmService.GrdCompPmReq(
-        _CompPmReq.id,
-        _CompPmReq.canal,
-        _CompPmReq.acc,
-        _CompPmReq.fi,
-        _CompPmReq.ff,
-        _CompPmReq.tlf,
-        _CompPmReq.tlfa,
-        _CompPmReq.horaIni,
-        _CompPmReq.horaFin,
-        qryStringCompPm
-            );
-
-        string jsonCompPmResp = JsonConvert.SerializeObject(_CompPmResp);
-        bool rsValCompPmResp = await _CompPmService.GrdCompPmResp(
-        _CompPm.idCompPm,
-        _CompPmResp.CodigoRespuesta,
-        _CompPmResp.DescripcionCliente,
-        _CompPmResp.DescripcionSistema,
-        _CompPmResp.FechaHora,
-        _CompPmResp.cantidadPagos,
-        jsonCompPmResp);
-
-        bool rsValCompPmPag = false;
-        if (_CompPmPag.pagos.Count > 0)
-        {
-            foreach (var rsDat in _CompPmPag.pagos)
-            {
-                string jsonCompPmPag = JsonConvert.SerializeObject(_CompPmPag);
-                rsValCompPmPag = await _CompPmService.GrdCompPmPag
-                (
-                    _CompPm.idCompPm,
-                     rsDat.Accion,
-                     rsDat.Banco,
-                     rsDat.TelefonoCliente,
-                     rsDat.TelefonoAfiliado,
-                     rsDat.Monto,
-                     rsDat.Fecha,
-                     rsDat.Hora,
-                     rsDat.Referencia,
-                     rsDat.Motivo,
-                    jsonCompPmPag
-                );
-            }
-        }
-
-        return Ok(new
-        {
-            //reqCompPm,
-            _CompPm.idCompPm,
-            rsValCompPmResp,
-            rsValCompPmPag,
-            _CompPmResp.cantidadPagos,
-            _CompPmResp.CodigoRespuesta,
-            _CompPmResp.DescripcionCliente,
-            _CompPmResp.DescripcionSistema,
-            _CompPmResp.FechaHora
-
-        });
-    }
-
     public async Task<CompPmResp> SolCompPm(string prmId, string prmQryString,
                                                      string prmApiKey, string prmApiSignature,
                                                      string prmNonce)
