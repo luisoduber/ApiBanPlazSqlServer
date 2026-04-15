@@ -41,8 +41,8 @@ public class CompPmController : ControllerBase
     public async Task<IActionResult> p2pId(string id,
         [FromQuery] string canal,
         [FromQuery] string? acc,
-        [FromQuery] DateTime? fi,
-        [FromQuery] DateTime? ff,
+        [FromQuery] string? fi,
+        [FromQuery] string? ff,
         [FromQuery] string? tlf,
         [FromQuery] string? tlfa,
         [FromQuery] string? horaIni,
@@ -61,31 +61,26 @@ public class CompPmController : ControllerBase
             cred.apiKeySecret
         );
 
-        if (!string.IsNullOrEmpty(canal)) { qryStringCompPm = "?canal=" + canal; }
+        if (string.IsNullOrEmpty(canal)) { canal = ""; } else { qryStringCompPm = "?canal=" + canal; }
+        if (string.IsNullOrEmpty(acc)) { acc = ""; } else { qryStringCompPm += "&acc=" + acc; }
+        if (string.IsNullOrEmpty(fi))  { fi = ""; } else { qryStringCompPm += "&fi=" + Convert.ToDateTime(fi).ToString("yyyy-MM-dd"); }
+        if (string.IsNullOrEmpty(ff)) { ff = ""; } else  { qryStringCompPm += "&ff=" + Convert.ToDateTime(ff).ToString("yyyy-MM-dd"); } 
+        if (string.IsNullOrEmpty(tlf)) { tlf = ""; } else { qryStringCompPm += "&tlf=" + tlf; }
+        if (string.IsNullOrEmpty(tlfa)) { tlfa = ""; } else { qryStringCompPm += "&tlfa=" + tlfa; }
+        if (string.IsNullOrEmpty(horaIni)) { horaIni = ""; } else { qryStringCompPm += "&horaIni=" + horaIni; }
+        if (string.IsNullOrEmpty(horaFin)) { horaFin = ""; } else { qryStringCompPm += "&horaFin=" + horaFin; }
 
-        Debug.WriteLine("hola 4" + qryStringCompPm);
+        _CompPmReq.id = id;
+        _CompPmReq.canal = canal;
+        _CompPmReq.acc = acc;
+        _CompPmReq.fi = fi;
+        _CompPmReq.ff = ff;
+        _CompPmReq.tlf = tlf;
+        _CompPmReq.tlfa = tlfa;
+        _CompPmReq.horaIni=horaIni;
+        _CompPmReq.horaFin=horaFin;
 
-        qryStringCompPm =
-               "?canal=" + canal +
-               "&acc=" + acc +
-               "&fi=" + Convert.ToDateTime(fi).ToString("yyyy-MM-dd") +
-               "&ff=" + Convert.ToDateTime(ff).ToString("yyyy-MM-dd") +
-               "&tlf=" + tlf +
-               "&tlfa=" + tlfa +
-               "&horaIni=" + horaIni +
-               "&horaFin=" + horaFin;
-
-        Debug.WriteLine("hola "+qryStringCompPm);
-
-        return Ok(new
-        {
-            qryStringCompPm
-
-        });
-
-
-        if (string.IsNullOrWhiteSpace(_CompPmReq.tlf)) { _CompPmReq.tlf = ""; }
-        if (string.IsNullOrWhiteSpace(_CompPmReq.tlfa)) { _CompPmReq.tlfa = ""; }
+        Debug.WriteLine(fi.ToString()+" "+ ff.ToString());
 
         _CompPmResp = await SolCompPm(id, qryStringCompPm, cred.ApiKey, apiSignature, nonce);
         _CompPm.idCompPm = await _CompPmService.GrdCompPmReq(
@@ -112,10 +107,14 @@ public class CompPmController : ControllerBase
         jsonCompPmResp);
 
         bool rsValCompPmPag = false;
+
+        Debug.WriteLine("cantidad de pagos: "+ _CompPmPag.pagos.Count);
         if (_CompPmPag.pagos.Count > 0)
         {
+            Debug.WriteLine("entro pagos: " + _CompPmPag.pagos.Count);
             foreach (var rsDat in _CompPmPag.pagos)
             {
+                Debug.WriteLine("foreach pagos: " + _CompPmPag.pagos.Count);
                 string jsonCompPmPag = JsonConvert.SerializeObject(_CompPmPag);
                 rsValCompPmPag = await _CompPmService.GrdCompPmPag
                 (
@@ -125,10 +124,12 @@ public class CompPmController : ControllerBase
                      rsDat.TelefonoCliente,
                      rsDat.TelefonoAfiliado,
                      rsDat.Monto,
+                     rsDat.Origen,
                      rsDat.Fecha,
                      rsDat.Hora,
                      rsDat.Referencia,
-                     rsDat.Motivo,
+                     rsDat.Concepto,
+                     rsDat.cedulaB,
                     jsonCompPmPag
                 );
             }

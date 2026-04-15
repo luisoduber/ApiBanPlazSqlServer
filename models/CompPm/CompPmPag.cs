@@ -9,11 +9,14 @@ namespace ApiBanPlaz.models.CompPm
         public string TelefonoCliente { get; set; }
         public string TelefonoAfiliado { get; set; }
         public decimal Monto { get; set; }
+        public string Origen { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
         public string Referencia { get; set; }
-        public string Motivo { get; set; }
-    }
+        public string Concepto { get; set; }
+
+        public string cedulaB { get; set; }
+}
 
 
     public class CompPmPag

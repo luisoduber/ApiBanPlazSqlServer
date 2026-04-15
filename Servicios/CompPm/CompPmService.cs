@@ -15,9 +15,9 @@ namespace ApiBanPlaz.Servicios.CompPm
         public async Task<int> GrdCompPmReq(
            string prmId,
            string prmCanal,
-           int prmAcc,
-           DateTime prmfi,
-           DateTime prmFf,
+           string prmAcc,
+           string prmfi,
+           string prmFf,
            string prmTlf,
            string prmTlfa,
            string prmHoraIni,
@@ -104,10 +104,12 @@ namespace ApiBanPlaz.Servicios.CompPm
             string prmTelefonoCliente,
             string prmTelefonoAfiliado,
             decimal prmMonto,
+            string prmOrigen,
             string prmFecha,
             string prmHora,
             string prmReferencia,
-            string prmMotivo,
+            string prmConcepto,
+            string prmCedulaB,
             string prmCadResp)
 
         {
@@ -121,10 +123,12 @@ namespace ApiBanPlaz.Servicios.CompPm
                 @prmTelefonoCliente,
                 @prmTelefonoAfiliado,
                 @prmMonto,
+                @prmOrigen,
                 @prmFecha,
                 @prmHora,
                 @prmReferencia,
-                @prmMotivo, 
+                @prmConcepto, 
+                @prmCedulaB,
                 @prmCadResp";
 
                 var rows = await _context.Database.ExecuteSqlRawAsync(
@@ -135,10 +139,12 @@ namespace ApiBanPlaz.Servicios.CompPm
                     new SqlParameter("@prmTelefonoCliente", prmTelefonoCliente),
                     new SqlParameter("@prmTelefonoAfiliado", prmTelefonoAfiliado),
                     new SqlParameter("@prmMonto", prmMonto),
+                    new SqlParameter("@prmOrigen", prmOrigen),
                     new SqlParameter("@prmFecha", prmFecha),
                     new SqlParameter("@prmHora", prmHora),
                     new SqlParameter("@prmReferencia", prmReferencia),
-                    new SqlParameter("@prmMotivo", prmMotivo),
+                    new SqlParameter("@prmConcepto", prmConcepto),
+                    new SqlParameter("@prmCedulaB", prmCedulaB),
                     new SqlParameter("@prmCadResp", prmCadResp)
                 );
 
