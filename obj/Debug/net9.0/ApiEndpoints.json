@@ -49,6 +49,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "prmJson",
         "Type": "System.String",
         "IsRequired": false
@@ -94,11 +99,17 @@
   {
     "ContainingType": "OperacionesesController",
     "Method": "Operaciones",
-    "RelativePath": "v0/cuentas/Operaciones",
+    "RelativePath": "v0/cuentas/operaciones/{prmRif}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

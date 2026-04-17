@@ -53,7 +53,7 @@ public class OperacionController : ControllerBase
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
 
-        string path = "v0/cuentas/Operacion";
+        string path = "v0/cuentas/operacion";
         string apiSignature = ApiSignatureGen.Generar(
             path,
             nonce,
@@ -68,7 +68,7 @@ public class OperacionController : ControllerBase
             _ReqOperacion.Banco,
             _ReqOperacion.TPago,
             _ReqOperacion.Naturaleza,
-            _ReqOperacion.prmReferencia,
+            _ReqOperacion.Referencia,
             _ReqOperacion.FechaInicio,
             _ReqOperacion.FechaFin,
             _ReqOperacion.Monto,
@@ -90,7 +90,7 @@ public class OperacionController : ControllerBase
             jsonOperacionResp);
 
         bool rsValOpeMovimientos = false;
-        if (_OpeMovimientos.movimientos.Count > 0)
+        if ((_OpeMovimientos !=null) && (_OpeMovimientos.movimientos != null))
         {
             foreach (var rsDat in _OpeMovimientos.movimientos)
             {
@@ -146,7 +146,7 @@ public class OperacionController : ControllerBase
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            using (var Res = await client.PostAsync("/v0/cuentas/operacion", content))
+            using (var Res = await client.PostAsync("v0/cuentas/operacion", content))
             {
                 if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta = values.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
@@ -154,8 +154,14 @@ public class OperacionController : ControllerBase
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
 
                 rsDat = await Res.Content.ReadAsStringAsync();
-                _OperacionResp = JsonConvert.DeserializeObject<OperacionResp>(rsDat);
-
+                if (!string.IsNullOrWhiteSpace(rsDat)) 
+                { 
+                    _OpeMovimientos = JsonConvert.DeserializeObject<OpeMovimientos>(rsDat);
+                    if ((_OpeMovimientos != null) && (_OpeMovimientos.movimientos != null))
+                    {
+                        _OperacionResp.CantMovimientos = _OpeMovimientos.movimientos.Count;
+                    }
+                }
                 _OperacionResp.CodigoRespuesta = codigoRespuesta;
                 _OperacionResp.DescripcionCliente = descripcionCliente;
                 _OperacionResp.DescripcionSistema = descripcionSistema;

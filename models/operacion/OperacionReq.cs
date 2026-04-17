@@ -20,7 +20,7 @@ namespace ApiBanPlaz.models.Operacion
         public string Naturaleza { get; set; }
 
         [StringLength(12)]
-        public string prmReferencia { get; set; }
+        public string Referencia { get; set; }
 
         [StringLength(10)]
         public string FechaInicio { get; set; }

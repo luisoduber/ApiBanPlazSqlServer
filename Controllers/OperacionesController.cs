@@ -1,4 +1,5 @@
 ﻿using ApiBanPlaz.models.CompPm;
+using ApiBanPlaz.models.Operacion;
 using ApiBanPlaz.models.Operaciones;
 using ApiBanPlaz.models.Operaciones;
 using ApiBanPlaz.Servicios.CompPm;
@@ -37,8 +38,8 @@ public class OperacionesesController : ControllerBase
         _OperacionesService = OperacionesService;
     }
 
-    [HttpPost("Operaciones")]
-    public async Task<IActionResult> Operaciones()
+    [HttpPost("operaciones/{prmRif}")]
+    public async Task<IActionResult> Operaciones(string prmRif)
     {
         string reqOperaciones = "";
         using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
@@ -53,7 +54,7 @@ public class OperacionesesController : ControllerBase
         var cred = await _credApiRsService.ObtCredApi();
         if (cred == null) return NotFound();
 
-        string path = "v0/cuentas/Operaciones";
+        string path = "v0/cuentas/operaciones";
         string apiSignature = ApiSignatureGen.Generar(
             path,
             nonce,
@@ -61,7 +62,8 @@ public class OperacionesesController : ControllerBase
             cred.apiKeySecret
         );
 
-        _OperacionesResp = await SolOperaciones(reqOperaciones, cred.ApiKey, apiSignature, nonce);
+        _ReqOperaciones.Rif_cliente = prmRif;
+        _OperacionesResp = await SolOperaciones(prmRif, reqOperaciones, cred.ApiKey, apiSignature, nonce);
         _Operaciones.idOperaciones = await _OperacionesService.GrdOperacionesReq(
             _ReqOperaciones.Rif_cliente,
             _ReqOperaciones.Cuenta,
@@ -127,8 +129,9 @@ public class OperacionesesController : ControllerBase
         });
     }
 
-    public async Task<OperacionesResp> SolOperaciones(string prmJson, string prmApiKey,
-                                         string prmApiSignature, string prmNonce)
+    public async Task<OperacionesResp> SolOperaciones(string prmRif, string prmJson, 
+                                                      string prmApiKey, string prmApiSignature, 
+                                                      string prmNonce)
     {
         string rsDat = "";
         string codigoRespuesta = "";
@@ -148,7 +151,8 @@ public class OperacionesesController : ControllerBase
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            using (var Res = await client.PostAsync("/v0/cuentas/Operaciones", content))
+            Debug.WriteLine($"{urlBan}v0/cuentas/operaciones/" + prmRif);
+            using (var Res = await client.PostAsync("v0/cuentas/operaciones/"+prmRif, content))
             {
                 if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta = values.FirstOrDefault(); }
                 if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
@@ -156,7 +160,17 @@ public class OperacionesesController : ControllerBase
                 if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
 
                 rsDat = await Res.Content.ReadAsStringAsync();
-                _OperacionesResp = JsonConvert.DeserializeObject<OperacionesResp>(rsDat);
+                Debug.WriteLine(rsDat);
+               
+
+                if (!string.IsNullOrWhiteSpace(rsDat))
+                {
+                    _OperacionesMov = JsonConvert.DeserializeObject<OperacionesMov>(rsDat);
+                    if ((_OperacionesMov != null) && (_OperacionesMov.movimientos != null))
+                    {
+                        _OperacionesResp.CantMovimientos = _OperacionesMov.movimientos.Count;
+                    }
+                }
 
                 _OperacionesResp.CodigoRespuesta = codigoRespuesta;
                 _OperacionesResp.DescripcionCliente = descripcionCliente;

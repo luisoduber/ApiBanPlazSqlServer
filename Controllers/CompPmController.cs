@@ -1,7 +1,4 @@
-﻿using ApiBanPlaz.models.CobroDl;
-using ApiBanPlaz.models.CompPm;
-using ApiBanPlaz.models.ConsultaLiq;
-using ApiBanPlaz.Servicios.CobroDl;
+﻿using ApiBanPlaz.models.CompPm;
 using ApiBanPlaz.Servicios.CompPm;
 using ApiBanPlaz.Servicios.General;
 using Microsoft.AspNetCore.Mvc;
@@ -80,8 +77,6 @@ public class CompPmController : ControllerBase
         _CompPmReq.horaIni=horaIni;
         _CompPmReq.horaFin=horaFin;
 
-        Debug.WriteLine(fi.ToString()+" "+ ff.ToString());
-
         _CompPmResp = await SolCompPm(id, qryStringCompPm, cred.ApiKey, apiSignature, nonce);
         _CompPm.idCompPm = await _CompPmService.GrdCompPmReq(
         _CompPmReq.id,
@@ -107,14 +102,10 @@ public class CompPmController : ControllerBase
         jsonCompPmResp);
 
         bool rsValCompPmPag = false;
-
-        Debug.WriteLine("cantidad de pagos: "+ _CompPmPag.pagos.Count);
         if (_CompPmPag.pagos.Count > 0)
         {
-            Debug.WriteLine("entro pagos: " + _CompPmPag.pagos.Count);
             foreach (var rsDat in _CompPmPag.pagos)
             {
-                Debug.WriteLine("foreach pagos: " + _CompPmPag.pagos.Count);
                 string jsonCompPmPag = JsonConvert.SerializeObject(_CompPmPag);
                 rsValCompPmPag = await _CompPmService.GrdCompPmPag
                 (
@@ -168,7 +159,6 @@ public class CompPmController : ControllerBase
             client.DefaultRequestHeaders.Add("nonce", prmNonce);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            Debug.WriteLine($"{urlBan}v1/pagos/p2p/{prmId}{prmQryString}");
             using (var Res = await client.GetAsync($"{urlBan}v1/pagos/p2p/{prmId}{prmQryString}"))
             {
 
