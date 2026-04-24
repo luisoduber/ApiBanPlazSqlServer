@@ -62,6 +62,11 @@ public class OperacionesesController : ControllerBase
             cred.apiKeySecret
         );
 
+        if (string.IsNullOrWhiteSpace(_ReqOperaciones.Banco)) { _ReqOperaciones.Banco = ""; }
+        if (string.IsNullOrWhiteSpace(_ReqOperaciones.Referencia)) { _ReqOperaciones.Referencia = ""; }
+        if (_ReqOperaciones.MontoMinimo == null) { _ReqOperaciones.MontoMinimo = 0; }
+        if (_ReqOperaciones.MontoMaximo == null) { _ReqOperaciones.MontoMaximo = 0; }
+
         _ReqOperaciones.Rif_cliente = prmRif;
         _OperacionesResp = await SolOperaciones(prmRif, reqOperaciones, cred.ApiKey, apiSignature, nonce);
         _Operaciones.idOperaciones = await _OperacionesService.GrdOperacionesReq(
@@ -94,7 +99,7 @@ public class OperacionesesController : ControllerBase
             jsonOperacionesResp);
 
         bool rsValOpeMovimientos = false;
-        if (_OperacionesMov.movimientos.Count > 0)
+        if ((_OperacionesMov != null) && (_OperacionesMov.movimientos != null))
         {
             foreach (var rsDat in _OperacionesMov.movimientos)
             {
@@ -162,7 +167,6 @@ public class OperacionesesController : ControllerBase
                 rsDat = await Res.Content.ReadAsStringAsync();
                 Debug.WriteLine(rsDat);
                
-
                 if (!string.IsNullOrWhiteSpace(rsDat))
                 {
                     _OperacionesMov = JsonConvert.DeserializeObject<OperacionesMov>(rsDat);
