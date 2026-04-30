@@ -9,6 +9,7 @@ using ApiBanPlaz.models.TokenDl;
 using ApiBanPlaz.models.CompPm;
 using ApiBanPlaz.models.Operacion;
 using ApiBanPlaz.models.Operaciones;
+using ApiBanPlaz.models.Cuentas;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -34,6 +35,7 @@ public class BanPlazDbContext : DbContext
         modelBuilder.Entity<CompPm>().HasNoKey();
         modelBuilder.Entity<Operacion>().HasNoKey();
         modelBuilder.Entity<Operaciones>().HasNoKey();
+        modelBuilder.Entity<Cuentas>().HasNoKey();
     }
 
     // DbSet vacío solo para ejecutar SP

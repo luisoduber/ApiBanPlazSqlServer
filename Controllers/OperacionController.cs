@@ -1,13 +1,8 @@
-﻿using ApiBanPlaz.models.CompPm;
-using ApiBanPlaz.models.Operacion;
-using ApiBanPlaz.models.Operacion;
-using ApiBanPlaz.Servicios.CompPm;
+﻿using ApiBanPlaz.models.Operacion;
 using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.Operacion;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;

@@ -1,13 +1,14 @@
 using ApiBanPlaz.Servicios.CobroDl;
-using ApiBanPlaz.Servicios.ConsultarDl;
+using ApiBanPlaz.Servicios.CompPm;
 using ApiBanPlaz.Servicios.ConsultaLiq;
+using ApiBanPlaz.Servicios.ConsultarDl;
+using ApiBanPlaz.Servicios.Cuentas;
 using ApiBanPlaz.Servicios.General;
+using ApiBanPlaz.Servicios.Operacion;
+using ApiBanPlaz.Servicios.Operaciones;
 using ApiBanPlaz.Servicios.PagoO;
 using ApiBanPlaz.Servicios.PagosP2p;
 using ApiBanPlaz.Servicios.TokenDl;
-using ApiBanPlaz.Servicios.CompPm;
-using ApiBanPlaz.Servicios.Operacion;
-using ApiBanPlaz.Servicios.Operaciones;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +33,7 @@ builder.Services.AddScoped<ConsultaLiqService>();
 builder.Services.AddScoped<CompPmService>();
 builder.Services.AddScoped<OperacionService>();
 builder.Services.AddScoped<OperacionesService>();
+builder.Services.AddScoped<CuentasService>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }
