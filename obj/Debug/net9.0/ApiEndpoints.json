@@ -41,6 +41,52 @@
     ]
   },
   {
+    "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
+    "Method": "SolCuentas",
+    "RelativePath": "v0",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmQryStringListMov",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmApiSignature",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prmNonce",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CuentasMov.CuentasMovResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "OperacionController",
     "Method": "SolOperacion",
     "RelativePath": "v0/cuentas",
@@ -144,6 +190,42 @@
         "Name": "cuenta",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
+    "Method": "Cuentas",
+    "RelativePath": "v0/Cuentas/{id}/{cuenta}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cuenta",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "moneda",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaInicio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechafin",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

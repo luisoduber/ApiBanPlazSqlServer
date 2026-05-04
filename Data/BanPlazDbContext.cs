@@ -10,9 +10,8 @@ using ApiBanPlaz.models.CompPm;
 using ApiBanPlaz.models.Operacion;
 using ApiBanPlaz.models.Operaciones;
 using ApiBanPlaz.models.Cuentas;
+using ApiBanPlaz.models.CuentasMov;
 using Microsoft.EntityFrameworkCore;
-
-
 public class BanPlazDbContext : DbContext
 {
     public BanPlazDbContext(DbContextOptions<BanPlazDbContext> options)
@@ -36,9 +35,6 @@ public class BanPlazDbContext : DbContext
         modelBuilder.Entity<Operacion>().HasNoKey();
         modelBuilder.Entity<Operaciones>().HasNoKey();
         modelBuilder.Entity<Cuentas>().HasNoKey();
+        modelBuilder.Entity<CuentasMov>().HasNoKey();
     }
-
-    // DbSet vacío solo para ejecutar SP
-   // public DbSet<DebinResult> DebinResults { get; set; }
-
 }

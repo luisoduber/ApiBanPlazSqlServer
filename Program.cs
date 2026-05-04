@@ -3,6 +3,7 @@ using ApiBanPlaz.Servicios.CompPm;
 using ApiBanPlaz.Servicios.ConsultaLiq;
 using ApiBanPlaz.Servicios.ConsultarDl;
 using ApiBanPlaz.Servicios.Cuentas;
+using ApiBanPlaz.Servicios.CuentasMov;
 using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.Operacion;
 using ApiBanPlaz.Servicios.Operaciones;
@@ -34,6 +35,7 @@ builder.Services.AddScoped<CompPmService>();
 builder.Services.AddScoped<OperacionService>();
 builder.Services.AddScoped<OperacionesService>();
 builder.Services.AddScoped<CuentasService>();
+builder.Services.AddScoped<CuentasMovService>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }
