@@ -195,9 +195,66 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OperacionController",
+    "Method": "Operacion",
+    "RelativePath": "v0/cuentas/Operacion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OperacionesesController",
+    "Method": "Operaciones",
+    "RelativePath": "v0/cuentas/operaciones/{prmRif}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prmRif",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
-    "Method": "Cuentas",
-    "RelativePath": "v0/Cuentas/{id}/{cuenta}",
+    "Method": "CuentasMov",
+    "RelativePath": "v0/cuentasMov/{cuenta}/movimientos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cuenta",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "moneda",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaInicio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechafin",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
+    "Method": "CuentasMov",
+    "RelativePath": "v0/cuentasMov/{id}/{cuenta}/movimientos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -226,32 +283,6 @@
         "Name": "fechafin",
         "Type": "System.String",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OperacionController",
-    "Method": "Operacion",
-    "RelativePath": "v0/cuentas/Operacion",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OperacionesesController",
-    "Method": "Operaciones",
-    "RelativePath": "v0/cuentas/operaciones/{prmRif}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmRif",
-        "Type": "System.String",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

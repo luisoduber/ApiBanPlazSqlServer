@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj": {}
+    "E:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj": {}
   },
   "projects": {
-    "C:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj": {
+    "E:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj",
+        "projectUniqueName": "E:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj",
         "projectName": "ApiBanPlaz",
-        "projectPath": "C:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj",
-        "packagesPath": "C:\\Users\\404\\.nuget\\packages\\",
-        "outputPath": "C:\\GITHUB\\ApiBanPlazSqlServer\\obj\\",
+        "projectPath": "E:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj",
+        "packagesPath": "C:\\Users\\programacion\\.nuget\\packages\\",
+        "outputPath": "E:\\GITHUB\\ApiBanPlazSqlServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\404\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\programacion\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -92,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

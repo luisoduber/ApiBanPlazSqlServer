@@ -39,9 +39,9 @@ namespace ApiBanPlaz.Controllers
             _CuentasMovService = CuentasMovService;
         }
 
-        [HttpGet("v0/cuentasMov/{id}/{cuenta}/movimientos")]
+        [HttpGet("cuentasMov/{cuenta}/movimientos")]
 
-        public async Task<IActionResult> Cuentas(string id, string cuenta, 
+        public async Task<IActionResult> CuentasMov(string cuenta, 
         [FromQuery] string moneda,
         [FromQuery] string fechaInicio,
         [FromQuery] string fechafin)
@@ -50,22 +50,7 @@ namespace ApiBanPlaz.Controllers
             var cred = await _credApiRsService.ObtCredApi();
             if (cred == null) return NotFound();
 
-            bool rsvalidId = string.IsNullOrWhiteSpace(id);
-            bool rsvalidCuent = string.IsNullOrWhiteSpace(cuenta);
-
-
-
-
-            if ((rsvalidId == false) && (rsvalidCuent == false))
-            {
-                return BadRequest("El ID o la Cuenta no pueden estar vacíos.");
-            }
-            if (id.Length) && (rsvalidCuent == false))
-            {
-            }
-
-
-                string qryStringListMov = "";
+            string qryStringListMov = "";
             string path = "v0/cuentas";
             string apiSignature = ApiSignatureGen.Generar(
                 path,
@@ -78,7 +63,19 @@ namespace ApiBanPlaz.Controllers
                 "&fechaInicio=" + fechaInicio +
                 "&fechafin=" + fechafin;
 
-            _CuentasMovResp = await SolCuentas(id, qryStringListMov, cred.ApiKey, apiSignature, nonce);
+            _CuentasMovReq.Cuenta = cuenta;
+            _CuentasMovReq.prmReferencia = "";
+            _CuentasMovReq.Moneda = moneda;
+            _CuentasMovReq.FechaInicio = fechaInicio;
+            _CuentasMovReq.FechaFin = fechafin;
+            _CuentasMovReq.Tipo = "";
+            _CuentasMovReq.MontoMinimo = 0;
+            _CuentasMovReq.MontoMaximo = 0;
+            _CuentasMovReq.Concepto = "";
+
+            //concepto opcionales en el query string referencia monto minimo monto maximo referencia
+
+            _CuentasMovResp = await SolCuentas(cuenta, qryStringListMov, cred.ApiKey, apiSignature, nonce);
             _CuentasMov.idCuent = await _CuentasMovService.GrdCuentasMovReq
             (
                 _CuentasMovReq.Cuenta,
@@ -90,7 +87,7 @@ namespace ApiBanPlaz.Controllers
                 _CuentasMovReq.MontoMinimo,
                 _CuentasMovReq.MontoMaximo,
                 _CuentasMovReq.Concepto,
-                ""
+                qryStringListMov
              );
 
             string jsonCuentasMovResp = JsonConvert.SerializeObject(_CuentasMovResp);
@@ -149,6 +146,113 @@ namespace ApiBanPlaz.Controllers
                 _CuentasMovResp.FechaHora
             });
         }
+        [HttpGet("cuentasMov/{id}/{cuenta}/movimientos")]
+
+        public async Task<IActionResult> CuentasMov(string id, string cuenta,
+       [FromQuery] string moneda,
+       [FromQuery] string fechaInicio,
+       [FromQuery] string fechafin)
+        {
+            string nonce = await _nonceService.ObtNonce();
+            var cred = await _credApiRsService.ObtCredApi();
+            if (cred == null) return NotFound();
+
+            string qryStringListMov = "";
+            string path = "v0/cuentas";
+            string apiSignature = ApiSignatureGen.Generar(
+                path,
+                nonce,
+                cred.apiKeySecret
+            );
+
+            qryStringListMov =
+                "?moneda=" + moneda +
+                "&fechaInicio=" + fechaInicio +
+                "&fechafin=" + fechafin;
+
+            _CuentasMovReq.Cuenta = id + "/" + cuenta;
+            _CuentasMovReq.prmReferencia = "";
+            _CuentasMovReq.Moneda = moneda;
+            _CuentasMovReq.FechaInicio = fechaInicio;
+            _CuentasMovReq.FechaFin = fechafin;
+            _CuentasMovReq.Tipo = "";
+            _CuentasMovReq.MontoMinimo = 0;
+            _CuentasMovReq.MontoMaximo = 0;
+            _CuentasMovReq.Concepto = "";
+
+            //concepto opcionales en el query string referencia monto minimo monto maximo referencia
+
+            _CuentasMovResp = await SolCuentas(id +"/"+cuenta, qryStringListMov, cred.ApiKey, apiSignature, nonce);
+            _CuentasMov.idCuent = await _CuentasMovService.GrdCuentasMovReq
+            (
+                _CuentasMovReq.Cuenta,
+                _CuentasMovReq.Moneda,
+                _CuentasMovReq.prmReferencia,
+                _CuentasMovReq.FechaInicio,
+                _CuentasMovReq.FechaFin,
+                _CuentasMovReq.Tipo,
+                _CuentasMovReq.MontoMinimo,
+                _CuentasMovReq.MontoMaximo,
+                _CuentasMovReq.Concepto,
+                qryStringListMov
+             );
+
+            string jsonCuentasMovResp = JsonConvert.SerializeObject(_CuentasMovResp);
+            bool rsValCuentasMovResp = await _CuentasMovService.GrdCuentMovResp
+            (
+                _CuentasMov.idCuent,
+                _CuentasMovResp.CodigoRespuesta,
+                _CuentasMovResp.DescripcionCliente,
+                _CuentasMovResp.DescripcionSistema,
+                _CuentasMovResp.FechaHora,
+                _CuentasMovResp.CantMov,
+                _CuentasListMov.numero,
+                _CuentasListMov.fechaApertura,
+                _CuentasListMov.tipoCuenta,
+                _CuentasListMov.estatus,
+                _CuentasListMov.moneda,
+                _CuentasListMov.saldoDisponible,
+                jsonCuentasMovResp
+            );
+
+            bool rsValCuentasMovList = false;
+
+            if ((_CuentasListMov != null) && (_CuentasListMov.movimientos != null))
+            {
+                foreach (var rsDat in _CuentasListMov.movimientos)
+                {
+                    string jsonCuentMovList = JsonConvert.SerializeObject(_CuentasListMov.movimientos);
+                    rsValCuentasMovList = await _CuentasMovService.GrdCuentListMov
+                    (
+                         _CuentasMov.idCuent,
+                         _CuentasListMov.numero,
+                         rsDat.fecha,
+                         rsDat.hora,
+                         rsDat.referencia,
+                         rsDat.concepto,
+                         rsDat.tipo,
+                         rsDat.naturaleza,
+                          rsDat.monto,
+                        jsonCuentMovList
+                    );
+                }
+            }
+
+
+
+            return Ok(new
+            {
+                //reqOperacion,
+                _CuentasMov.idCuent,
+                rsValCuentasMovResp,
+                rsValCuentasMovList,
+                _CuentasMovResp.CantMov,
+                _CuentasMovResp.CodigoRespuesta,
+                _CuentasMovResp.DescripcionCliente,
+                _CuentasMovResp.DescripcionSistema,
+                _CuentasMovResp.FechaHora
+            });
+        }
 
         public async Task<CuentasMovResp> SolCuentas(string prmId, string prmQryStringListMov, 
                                                     string prmApiKey,string prmApiSignature, 
@@ -171,9 +275,7 @@ namespace ApiBanPlaz.Controllers
                 client.DefaultRequestHeaders.Add("nonce", prmNonce);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                if (prmId == "default") { prmPath = $"v0/cuentas/{prmId}/movimientos?{prmQryStringListMov}"; }
-                else { prmPath = $"v0/cuentas/{prmId}"; }
-
+                if (prmId != "") { prmPath = $"v0/cuentas/{prmId}/movimientos?{prmQryStringListMov}"; }
                 using (var Res = await client.GetAsync(prmPath))
                 {
                     if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta = values.FirstOrDefault(); }
