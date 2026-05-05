@@ -39,7 +39,7 @@ namespace ApiBanPlaz.Controllers
             _CuentasMovService = CuentasMovService;
         }
 
-        [HttpGet("Cuentas/{id}/{cuenta}")]
+        [HttpGet("v0/cuentasMov/{id}/{cuenta}/movimientos")]
 
         public async Task<IActionResult> Cuentas(string id, string cuenta, 
         [FromQuery] string moneda,
@@ -50,7 +50,22 @@ namespace ApiBanPlaz.Controllers
             var cred = await _credApiRsService.ObtCredApi();
             if (cred == null) return NotFound();
 
-            string qryStringListMov = "";
+            bool rsvalidId = string.IsNullOrWhiteSpace(id);
+            bool rsvalidCuent = string.IsNullOrWhiteSpace(cuenta);
+
+
+
+
+            if ((rsvalidId == false) && (rsvalidCuent == false))
+            {
+                return BadRequest("El ID o la Cuenta no pueden estar vacíos.");
+            }
+            if (id.Length) && (rsvalidCuent == false))
+            {
+            }
+
+
+                string qryStringListMov = "";
             string path = "v0/cuentas";
             string apiSignature = ApiSignatureGen.Generar(
                 path,

@@ -264,7 +264,7 @@
               "RelativeDocumentMoniker": "Controllers\\CuentasMovController.cs",
               "ToolTip": "C:\\GITHUB\\ApiBanPlazSqlServer\\Controllers\\CuentasMovController.cs",
               "RelativeToolTip": "Controllers\\CuentasMovController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAowGwAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwD4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T20:58:09.437Z",
               "EditorCaption": ""
@@ -279,8 +279,7 @@
               "RelativeToolTip": "Servicios\\CuentasMov\\CuentasMovService.cs",
               "ViewState": "AgIAAGIAAAAAAAAAAAAwwHMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:14:31.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:14:31.92Z"
             },
             {
               "$type": "Document",
@@ -292,8 +291,7 @@
               "RelativeToolTip": "models\\CuentasMov\\CuentasListMov.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:04:45.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:04:45.69Z"
             },
             {
               "$type": "Document",
@@ -305,8 +303,7 @@
               "RelativeToolTip": "models\\CuentasMov\\CuentasMovResp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T19:55:00.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T19:55:00.565Z"
             },
             {
               "$type": "Document",
@@ -366,8 +363,7 @@
               "RelativeToolTip": "Controllers\\ConsultaLiqController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAQwDkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T01:39:24.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-20T01:39:24.987Z"
             },
             {
               "$type": "Document",
