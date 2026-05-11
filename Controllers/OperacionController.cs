@@ -56,6 +56,8 @@ public class OperacionController : ControllerBase
             cred.apiKeySecret
         );
 
+        if (string.IsNullOrWhiteSpace(_ReqOperacion.Referencia)) { _ReqOperacion.Referencia = "";  }
+
         _OperacionResp = await SolOperacion(reqOperacion, cred.ApiKey, apiSignature, nonce);
         _Operacion.idOperacion = await _OperacionService.GrdOperacionReq(
             _ReqOperacion.Cuenta,
