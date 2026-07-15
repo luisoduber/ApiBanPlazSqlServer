@@ -3,282 +3,127 @@ using ApiBanPlaz.Servicios.PagoO;
 using ApiBanPlaz.Servicios.General;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Diagnostics;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Text;
+
 
 [ApiController]
 [Route("/v1/cce")]
 public class PagoOController : ControllerBase
 {
-    private readonly NonceService _nonceService;
-    private readonly CredApiRsService _credApiRsService;
+    private readonly IProcPagosOService _ProcPagosOService;
+    private readonly ILogger<PagoOController> _logger;
 
-    private readonly PagoOService _PagoOService;
-    private readonly IConfiguration _config;
-    string urlBan = "";
-
-    PagoOResp _PagoOResp = new PagoOResp();
-    PagoO _PagoO = new PagoO();
-    public PagoOController(IConfiguration config, NonceService nonceService,
-                        CredApiRsService credApiRsService, PagoOService Pagos0Service)
+    public PagoOController(
+        IProcPagosOService ProcPagosOService,
+        ILogger<PagoOController> logger)
     {
-        _nonceService = nonceService;
-        _credApiRsService = credApiRsService;
-        _config = config;
-        urlBan = _config["urlBan"].ToString();
-        _PagoOService = Pagos0Service;
+        _ProcPagosOService = ProcPagosOService;
+        _logger = logger;
     }
 
     [HttpPost("PagoO/{prmRif}")]
-    public async Task<IActionResult> PagoORif(string prmRif)
-    {
-        string reqPagoO= "";
-        using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
-        {
-            reqPagoO = await reader.ReadToEndAsync();
-        }
-
-        var _ReqPagoO = JsonConvert.DeserializeObject<PagoOReq>(reqPagoO);
-        if (_ReqPagoO == null) return BadRequest("Cuerpo de petición inválido.");
-
-        string nonce = await _nonceService.ObtNonce();
-        var cred = await _credApiRsService.ObtCredApi();
-        if (cred == null) return NotFound();
-
-        string path = "v1/cce/pagoO";
-        string apiSignature = ApiSignatureGen.Generar(
-            path,
-            nonce,
-            reqPagoO,
-            cred.apiKeySecret
-        );
-
-        if (string.IsNullOrWhiteSpace(_ReqPagoO.Referencia)) {_ReqPagoO.Referencia = "";}
-        if (string.IsNullOrWhiteSpace(_ReqPagoO.Fecha_hora.ToString())) { _ReqPagoO.Fecha_hora = DateTime.Now; }
-
-        _PagoOResp = await ProcPagoORif(prmRif, reqPagoO, cred.ApiKey, apiSignature, nonce);
-        _PagoO.IdPagoO = await _PagoOService.spGrdPagoOReq(
-             _ReqPagoO.Moneda,
-             _ReqPagoO.Canal,
-             _ReqPagoO.Tipo_cce,
-             _ReqPagoO.Tipo_proposito,
-             _ReqPagoO.Tipo_instrumento_b,
-             _ReqPagoO.Identificacion_o,
-             _ReqPagoO.Identificacion_b,
-             _ReqPagoO.Cuenta_origen,
-             _ReqPagoO.Cuenta_destino,
-             _ReqPagoO.Telefono,
-             _ReqPagoO.Correo,
-             _ReqPagoO.Cod_banco_d,
-             _ReqPagoO.Cod_banco_a,
-             _ReqPagoO.Nombre_d,
-             _ReqPagoO.Nombre_a,
-             _ReqPagoO.Monto,
-             _ReqPagoO.Concepto,
-             _ReqPagoO.Direccion_ip,
-             _ReqPagoO.Referencia,
-             _ReqPagoO.Fecha_hora,
-             reqPagoO);
-
-        string jsonPagosP2pResp = JsonConvert.SerializeObject(_PagoOResp);
-        bool rsValPagosP2pResp = await _PagoOService.spGrdPagoOResp(
-            _PagoO.IdPagoO,
-            _PagoOResp.CodigoRespuesta,
-            _PagoOResp.DescripcionCliente,
-            _PagoOResp.DescripcionSistema,
-            _PagoOResp.FechaHora,
-            _PagoOResp.NumeroReferencia,
-            jsonPagosP2pResp);
-
-        return Ok(new
-        {
-            _PagoO.IdPagoO,
-            rsValPagosP2pResp,
-            _PagoOResp.NumeroReferencia,
-            _PagoOResp.CodigoRespuesta,
-            _PagoOResp.DescripcionCliente,
-            _PagoOResp.DescripcionSistema,
-            _PagoOResp.FechaHora
-        });
-    }
-
+    [ProducesResponseType(typeof(PagoOResp), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status502BadGateway)]
+    [ProducesResponseType(StatusCodes.Status504GatewayTimeout)]
+    public Task<IActionResult> PagoORif(string prmRif, CancellationToken ct)
+        => ProcesarAsync(rif: prmRif, ct);
 
     [HttpPost("PagoO")]
-    public async Task<IActionResult> PagoO()
+    [ProducesResponseType(typeof(PagoOResp), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status502BadGateway)]
+    [ProducesResponseType(StatusCodes.Status504GatewayTimeout)]
+    public Task<IActionResult> PagoO(CancellationToken ct)
+        => ProcesarAsync(rif: null, ct);
+
+    /// <summary>
+    /// Lógica común a ambos endpoints (antes duplicada en PagoORif y PagoO
+    /// dentro del controlador original). Solo cambia si se le pasa un RIF o no.
+    /// </summary>
+    private async Task<IActionResult> ProcesarAsync(string? rif, CancellationToken ct)
     {
-        string reqPagoO = "";
-        using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
+        string reqPagoORaw;
+        using (var reader = new StreamReader(Request.Body, System.Text.Encoding.UTF8))
         {
-            reqPagoO = await reader.ReadToEndAsync();
+            reqPagoORaw = await reader.ReadToEndAsync(ct);
         }
 
-        var _ReqPagoO = JsonConvert.DeserializeObject<PagoOReq>(reqPagoO);
-        if (_ReqPagoO == null) return BadRequest("Cuerpo de petición inválido.");
+        if (string.IsNullOrWhiteSpace(reqPagoORaw))
+            return BadRequest("El cuerpo de la petición no puede estar vacío.");
 
-        string nonce = await _nonceService.ObtNonce();
-        var cred = await _credApiRsService.ObtCredApi();
-        if (cred == null) return NotFound();
-
-        string path = "v1/cce/pagoO";
-        string apiSignature = ApiSignatureGen.Generar(
-            path,
-            nonce,
-            reqPagoO,
-            cred.apiKeySecret
-        );
-
-        if (string.IsNullOrWhiteSpace(_ReqPagoO.Referencia)){_ReqPagoO.Referencia = "";}
-        if (string.IsNullOrWhiteSpace(_ReqPagoO.Fecha_hora.ToString())) { _ReqPagoO.Fecha_hora = DateTime.Now; }
-
-        _PagoOResp = await ProcPagoO(reqPagoO, cred.ApiKey, apiSignature, nonce);
-        _PagoO.IdPagoO = await _PagoOService.spGrdPagoOReq(
-                     _ReqPagoO.Moneda,
-                     _ReqPagoO.Canal,
-                     _ReqPagoO.Tipo_cce,
-                     _ReqPagoO.Tipo_proposito,
-                     _ReqPagoO.Tipo_instrumento_b,
-                     _ReqPagoO.Identificacion_o,
-                     _ReqPagoO.Identificacion_b,
-                     _ReqPagoO.Cuenta_origen,
-                     _ReqPagoO.Cuenta_destino,
-                     _ReqPagoO.Telefono,
-                     _ReqPagoO.Correo,
-                     _ReqPagoO.Cod_banco_d,
-                     _ReqPagoO.Cod_banco_a,
-                     _ReqPagoO.Nombre_d,
-                     _ReqPagoO.Nombre_a,
-                     _ReqPagoO.Monto,
-                     _ReqPagoO.Concepto,
-                     _ReqPagoO.Direccion_ip,
-                     _ReqPagoO.Referencia,
-                     _ReqPagoO.Fecha_hora,
-                     reqPagoO);
-
-        string jsonPagos0Resp = JsonConvert.SerializeObject(_PagoOResp);
-        bool rsValPagos0Resp = await _PagoOService.spGrdPagoOResp(
-            _PagoO.IdPagoO,
-            _PagoOResp.CodigoRespuesta,
-            _PagoOResp.DescripcionCliente,
-            _PagoOResp.DescripcionSistema,
-            _PagoOResp.FechaHora,
-            _PagoOResp.NumeroReferencia,
-            jsonPagos0Resp);
-
-        return Ok(new
+        PagoOReq? reqPagoO;
+        try
         {
-            _PagoO.IdPagoO,
-            rsValPagos0Resp,
-            _PagoOResp.NumeroReferencia,
-            _PagoOResp.CodigoRespuesta,
-            _PagoOResp.DescripcionCliente,
-            _PagoOResp.DescripcionSistema,
-            _PagoOResp.FechaHora
-        });
-    }
-
-    public async Task<PagoOResp> ProcPagoO(string prmJson, string prmApiKey,
-                                         string prmApiSignature, string prmNonce)
-    {
-        string rsDat = "";
-        string codigoRespuesta = "";
-        string descripcionCliente = "";
-        string descripcionSistema = "";
-        string fechaHora = "";
-
-        using (var client = new HttpClient())
-        {
-            var content = new StringContent(prmJson, Encoding.UTF8, "application/json");
-            client.BaseAddress = new Uri(urlBan);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("api-key", prmApiKey);
-            client.DefaultRequestHeaders.Add("api-signature", prmApiSignature);
-            client.DefaultRequestHeaders.Add("nonce", prmNonce);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            using (var Res = await client.PostAsync("v1/cce/pagoO", content))
-            {
-                if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta = values.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-
-                rsDat = await Res.Content.ReadAsStringAsync();
-                Debug.WriteLine(" rsDat : S", rsDat);
-                if (!string.IsNullOrEmpty(rsDat))
-                {
-                  _PagoOResp = JsonConvert.DeserializeObject<PagoOResp>(rsDat);
-                }
-                else { _PagoOResp.NumeroReferencia = ""; }
-
-                _PagoOResp.CodigoRespuesta = codigoRespuesta;
-                _PagoOResp.DescripcionCliente = descripcionCliente;
-                _PagoOResp.DescripcionSistema = descripcionSistema;
-                _PagoOResp.FechaHora = DateTime.Parse(fechaHora);
-            }
+            reqPagoO = JsonConvert.DeserializeObject<PagoOReq>(reqPagoORaw);
         }
-        return _PagoOResp;
-    }
-
-
-    public async Task<PagoOResp> ProcPagoORif(string prmRif, string prmJson,
-                                                   string prmApiKey, string prmApiSignature,
-                                                   string prmNonce)
-    {
-        string rsDat = "";
-        string codigoRespuesta = "";
-        string descripcionCliente = "";
-        string descripcionSistema = "";
-        string fechaHora = "";
-
-        using (var client = new HttpClient())
+        catch (JsonException ex)
         {
-            var content = new StringContent(prmJson, Encoding.UTF8, "application/json");
-            client.BaseAddress = new Uri(urlBan);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("api-key", prmApiKey);
-            client.DefaultRequestHeaders.Add("api-signature", prmApiSignature);
-            client.DefaultRequestHeaders.Add("nonce", prmNonce);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            using (var Res = await client.PostAsync("v1/cce/pagoO/" + prmRif, content))
-            {
-                if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta = values.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-
-                rsDat = await Res.Content.ReadAsStringAsync();
-                if (!string.IsNullOrEmpty(rsDat))
-                {
-                    _PagoOResp = JsonConvert.DeserializeObject<PagoOResp>(rsDat);
-                }
-                else { _PagoOResp.NumeroReferencia = ""; }
-
-                _PagoOResp.CodigoRespuesta = codigoRespuesta;
-                _PagoOResp.DescripcionCliente = descripcionCliente;
-                _PagoOResp.DescripcionSistema = descripcionSistema;
-                _PagoOResp.FechaHora = DateTime.Parse(fechaHora);
-            }
+            _logger.LogWarning(ex, "JSON inválido recibido en /PagoO");
+            return BadRequest("Cuerpo de petición inválido: JSON mal formado.");
         }
-        return _PagoOResp;
-    }
 
-    public static class ApiSignatureGen
-    {
-        public static string Generar(string path, string nonce, string body, string secret)
+        if (reqPagoO == null)
+            return BadRequest("Cuerpo de petición inválido.");
+
+        if (!TryVal(reqPagoO, out var errVal))
+            return BadRequest(errVal);
+
+        try
         {
-            string signatureRaw = $"/{path}{nonce}{body}";
-            byte[] keyBytes = Encoding.UTF8.GetBytes(secret);
-            byte[] messageBytes = Encoding.UTF8.GetBytes(signatureRaw);
-
-            using (var hmac = new HMACSHA384(keyBytes))
-            {
-                byte[] hashBytes = hmac.ComputeHash(messageBytes);
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-            }
+            var resultado = await _ProcPagosOService.ProcesarPagoOAsync(reqPagoO, reqPagoORaw, rif, ct);
+            return Ok(resultado);
+        }
+        catch (HttpRequestException ex)
+        {
+            _logger.LogError(ex, "Error de comunicación con Banco Plaza en /PagoO (tras los reintentos configurados)");
+            return StatusCode(StatusCodes.Status502BadGateway,
+                "No se pudo comunicar con el servicio del banco.");
+        }
+        catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning(ex, "Timeout al llamar a Banco Plaza en /PagoO");
+            return StatusCode(StatusCodes.Status504GatewayTimeout,
+                "Tiempo de espera agotado al contactar al banco.");
+        }
+        catch (OperationCanceledException)
+        {
+            _logger.LogInformation("La petición /PagoO fue cancelada por el cliente.");
+            return StatusCode(499);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error inesperado procesando /PagoO");
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Ocurrió un error inesperado procesando la solicitud.");
         }
     }
 
+    private static bool TryVal(PagoOReq req, out string? err)
+    {
+        if (string.IsNullOrWhiteSpace(req.Moneda))
+        {
+            err = "El campo 'Moneda' es obligatorio.";
+            return false;
+        }
+        else if (string.IsNullOrWhiteSpace(req.Cuenta_origen))
+        {
+            err = "El campo 'Cuenta_origen' es obligatorio.";
+            return false;
+        }
+       else  if (string.IsNullOrWhiteSpace(req.Cuenta_destino))
+        {
+            err = "El campo 'Cuenta_destino' es obligatorio.";
+            return false;
+        }
+        else if (req.Monto <= 0)
+        {
+            err = "El campo 'Monto' debe ser mayor a cero.";
+            return false;
+        }
+        // Agrega aquí el resto de validaciones de negocio necesarias...
+
+        err = null;
+        return true;
+    }
 }
 

@@ -60,6 +60,8 @@ builder.Services.AddScoped<IProcTokenDIService, ProcTokenDIService>();
 builder.Services.AddScoped<IProcCobroDIService, ProcCobroDIService>();
 builder.Services.AddScoped<IProcConsultarDlService, ProcConsultarDlService>();
 builder.Services.AddScoped<IProcPagosP2pService, ProcPagosP2pService>();
+builder.Services.AddScoped<IProcPagosOService, ProcPagosOService>();
+builder.Services.AddScoped<IProcConsultaLiqService, ProcConsultaLiqService>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }
