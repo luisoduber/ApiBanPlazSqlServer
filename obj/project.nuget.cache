@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xpOHBeHqZnw=",
+  "dgSpecHash": "Raa/AzglNJU=",
   "success": true,
-  "projectFilePath": "E:\\GITHUB\\ApiBanPlazSqlServer\\ApiBanPlaz.csproj",
+  "projectFilePath": "D:\\GITHUB\\ApiBanPlazSqlServer - mod\\ApiBanPlaz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\programacion\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\programacion\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

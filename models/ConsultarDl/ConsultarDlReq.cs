@@ -18,7 +18,7 @@ namespace ApiBanPlaz.models.ConsultarDl
         public string referencia_c { get; set; }
 
         [Required]
-        public decimal Monto { get; set; }
+        public decimal monto { get; set; }
         [Required]
         public string canal { get; set; }
 

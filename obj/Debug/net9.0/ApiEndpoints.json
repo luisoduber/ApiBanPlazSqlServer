@@ -462,93 +462,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CobroDIController",
-    "Method": "SolTokenDI",
-    "RelativePath": "v1/cce/debinm",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmJson",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.CobroDl.CobroDIResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ConsultarDIController",
-    "Method": "SolConsultarDI",
-    "RelativePath": "v1/cce/debinm",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmQryString",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.ConsultarDl.ConsultarDlResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "TokenDIController",
     "Method": "SolTokenDI",
     "RelativePath": "v1/cce/debinm",
@@ -597,7 +510,36 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CobroDl.CobroDIResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "ConsultarDIController",
@@ -638,7 +580,36 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.ConsultarDl.ConsultarDlResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "TokenDIController",
@@ -648,7 +619,36 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.TokenDl.TokenDlResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "PagoOController",
@@ -723,93 +723,6 @@
     ]
   },
   {
-    "ContainingType": "PagosP2pController",
-    "Method": "ProcPagosP2p",
-    "RelativePath": "v1/pagos",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmJson",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.PagosP2p.PagosP2pResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PagosP2pController",
-    "Method": "ProcPagosP2pRif",
-    "RelativePath": "v1/pagos",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmRif",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmJson",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.PagosP2p.PagosP2pResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "CompPmController",
     "Method": "p2pId",
     "RelativePath": "v1/pagos/p2p/{id}",
@@ -873,7 +786,36 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.PagosP2p.PagosP2pResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "PagosP2pController",
@@ -889,6 +831,35 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.PagosP2p.PagosP2pResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   }
 ]

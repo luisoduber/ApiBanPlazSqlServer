@@ -1,165 +1,110 @@
 ﻿using ApiBanPlaz.models.CobroDI;
 using ApiBanPlaz.models.CobroDl;
-using ApiBanPlaz.models.Entities;
 using ApiBanPlaz.Servicios.CobroDl;
 using ApiBanPlaz.Servicios.General;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
-using System.Diagnostics;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Security.Cryptography.Xml;
-using System.Text;
+
 
 [ApiController]
 [Route("v1/cce/debinm")]
 public class CobroDIController : ControllerBase
 {
-    private readonly NonceService _nonceService;
-    private readonly CredApiRsService _credApiRsService;
-
+    private readonly IProcCobroDIService _IProcCobroDIService;
     private readonly CobroDIService _CobroDIService;
     private readonly IConfiguration _config;
-    string urlBan = "";
-    int idCobroDI = 0;
+    private readonly ILogger<CobroDIController> _logger;
 
-    CobroDIResp _CobroDIResp = new CobroDIResp();
-    CobroDI _CobroDI = new CobroDI();
-    public CobroDIController(IConfiguration config, NonceService nonceService,
-                        CredApiRsService credApiRsService, CobroDIService cobroDIService)
+    public CobroDIController(IConfiguration config,  CobroDIService cobroDIService, IProcCobroDIService IProcCobroDIService, ILogger<CobroDIController> logger)
     {
-        _nonceService = nonceService;
-        _credApiRsService = credApiRsService;
-        _config = config;
-        urlBan = _config["urlBan"].ToString();
         _CobroDIService = cobroDIService;
+        _IProcCobroDIService = IProcCobroDIService;
+        _logger = logger;
     }
 
     [HttpPost("CobroDI")]
-    public async Task<IActionResult> CobroDI()
+    [ProducesResponseType(typeof(CobroDIResp), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status502BadGateway)]
+    [ProducesResponseType(StatusCodes.Status504GatewayTimeout)]
+    public async Task<IActionResult> CobroDI(CancellationToken ct)
     {
-        string reqCobroDI="";
-        using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
+        string reqCobroDIRaw;
+        using (var reader = new StreamReader(Request.Body, System.Text.Encoding.UTF8))
         {
-            reqCobroDI = await reader.ReadToEndAsync();
+            reqCobroDIRaw = await reader.ReadToEndAsync(ct);
         }
 
-        var _ReqCobroDI = JsonConvert.DeserializeObject<CobroDIReq>(reqCobroDI);
-        if (_ReqCobroDI == null) return BadRequest("Cuerpo de petición inválido.");
+        if (string.IsNullOrWhiteSpace(reqCobroDIRaw))
+            return BadRequest("El cuerpo de la petición no puede estar vacío.");
 
-        string nonce = await _nonceService.ObtNonce();
-        var cred = await _credApiRsService.ObtCredApi();
-        if (cred == null) return NotFound();
-
-        string path = "v1/cce/debinm/cobroDI";
-        string apiSignature = ApiSignatureGen.Generar(
-            path,
-            nonce,
-           reqCobroDI,
-            cred.apiKeySecret
-        );
-
-        _CobroDIResp = await SolTokenDI(reqCobroDI, cred.ApiKey,apiSignature, nonce);
-        _CobroDI.IdCobroDI = await _CobroDIService.GrdCobroDIAsync(
-            _ReqCobroDI.Moneda,
-            _ReqCobroDI.Canal,
-            _ReqCobroDI.Tvalidacion_p,
-            _ReqCobroDI.Identificacion_p,
-            _ReqCobroDI.Cuenta_cobrador,
-            _ReqCobroDI.Cuenta_pagador,
-            _ReqCobroDI.Telefono_pagador,
-            _ReqCobroDI.Cod_banco_p,
-            _ReqCobroDI.Nombre_p,
-            _ReqCobroDI.Monto,
-            _ReqCobroDI.Concepto,
-            _ReqCobroDI.Token_p,
-            _ReqCobroDI.Direccion_ip,
-            _ReqCobroDI.Referencia_c,
-             reqCobroDI
-            );
-
-        string jsonCobroDIResp = JsonConvert.SerializeObject(_CobroDIResp);
-        bool rsValCobroDIResp = await _CobroDIService.GrdCobroDIRespAsync(
-            _CobroDI.IdCobroDI,
-            _CobroDIResp.CodigoRespuesta,
-            _CobroDIResp.DescripcionCliente,
-            _CobroDIResp.DescripcionSistema,
-            _CobroDIResp.FechaHora,
-            _CobroDIResp.Referencia_c,
-            _CobroDIResp.Endtoend,
-            jsonCobroDIResp);
-
-        return Ok(new
+        CobroDIReq? reqCobroDI;
+        try
         {
-            //reqCobroDI,
-             _CobroDI.IdCobroDI,
-            rsValCobroDIResp,
-            _CobroDIResp.Referencia_c,
-            _CobroDIResp.Endtoend,
-            _CobroDIResp.CodigoRespuesta,
-            _CobroDIResp.DescripcionCliente,
-            _CobroDIResp.DescripcionSistema,
-            _CobroDIResp.FechaHora
-
-        });
-    }
-
-    public async Task<CobroDIResp> SolTokenDI(string prmJson, string prmApiKey, 
-                                         string prmApiSignature, string prmNonce)
-    {
-        string rsDat = "";
-        string codigoRespuesta = "";
-        string descripcionCliente = "";
-        string descripcionSistema = "";
-        string fechaHora = "";
-        string referencia_c = "";
-        string endtoend = "";
-
-        using (var client = new HttpClient())
-        {
-            var content = new StringContent(prmJson, Encoding.UTF8, "application/json");
-            client.BaseAddress = new Uri(urlBan);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("api-key", prmApiKey);
-            client.DefaultRequestHeaders.Add("api-signature", prmApiSignature);
-            client.DefaultRequestHeaders.Add("nonce", prmNonce);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            using (var Res = await client.PostAsync("/v1/cce/debinm/cobroDI", content))
-            {
-                if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta= values.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-
-                rsDat = await Res.Content.ReadAsStringAsync();
-                _CobroDIResp = JsonConvert.DeserializeObject<CobroDIResp>(rsDat);
-
-                _CobroDIResp.CodigoRespuesta = codigoRespuesta;
-                _CobroDIResp.DescripcionCliente = descripcionCliente;
-                _CobroDIResp.DescripcionSistema = descripcionSistema;
-                _CobroDIResp.FechaHora =DateTime.Parse(fechaHora);
-            }
+            reqCobroDI = JsonConvert.DeserializeObject<CobroDIReq>(reqCobroDIRaw);
         }
-        return _CobroDIResp;
-    }
-
-public static class ApiSignatureGen
-{
-    public static string Generar(string path, string nonce, string body, string secret)
-    {
-        string signatureRaw = $"/{path}{nonce}{body}";
-        byte[] keyBytes = Encoding.UTF8.GetBytes(secret);
-        byte[] messageBytes = Encoding.UTF8.GetBytes(signatureRaw);
-
-        using (var hmac = new HMACSHA384(keyBytes))
+        catch (JsonException ex)
         {
-            byte[] hashBytes = hmac.ComputeHash(messageBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            _logger.LogWarning(ex, "JSON inválido recibido en /CobroDI");
+            return BadRequest("Cuerpo de petición inválido: JSON mal formado.");
+        }
+
+        if (reqCobroDI == null)
+            return BadRequest("Cuerpo de petición inválido.");
+
+        if (!TryValReq(reqCobroDI, out var errVal))
+            return BadRequest(errVal);
+
+        try
+        {
+            var resultado = await _IProcCobroDIService.ProcCobroDIAsync(reqCobroDI, reqCobroDIRaw, ct);
+            return Ok(resultado);
+        }
+        catch (HttpRequestException ex)
+        {
+            _logger.LogError(ex, "Error de comunicación con Banco Plaza en /CobroDI");
+            return StatusCode(StatusCodes.Status502BadGateway,
+                "No se pudo comunicar con el servicio del banco.");
+        }
+        catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning(ex, "Timeout al llamar a Banco Plaza en /CobroDI");
+            return StatusCode(StatusCodes.Status504GatewayTimeout,
+                "Tiempo de espera agotado al contactar al banco.");
+        }
+        catch (OperationCanceledException)
+        {
+            _logger.LogInformation("La petición /CobroDI fue cancelada por el cliente.");
+            return StatusCode(499);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error inesperado procesando /CobroDI");
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Ocurrió un error inesperado procesando la solicitud.");
         }
     }
-}
+
+    private static bool TryValReq(CobroDIReq req, out string? err)
+    {
+        if (string.IsNullOrWhiteSpace(req.Moneda))
+        {
+            err = "El campo 'Moneda' es obligatorio.";
+            return false;
+        }
+        else if (string.IsNullOrWhiteSpace(req.Token_p))
+        {
+            err = "El campo 'Token_p' es obligatorio.";
+            return false;
+        }
+       else  if (req.Monto <= 0)
+        {
+            err = "El campo 'Monto' debe ser mayor a cero.";
+            return false;
+        }
+
+        err = null;
+        return true;
+    }
 
 }

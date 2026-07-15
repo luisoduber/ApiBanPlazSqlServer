@@ -18,179 +18,112 @@ using System.Text;
 [Route("v1/cce/debinm")]
 public class ConsultarDIController : ControllerBase
 {
-    private readonly NonceService _nonceService;
-    private readonly CredApiRsService _credApiRsService;
-
+    private readonly IProcConsultarDlService _ProcConsultarDlService;
     private readonly ConsultarDlService _ConsultarDIService;
     private readonly IConfiguration _config;
-    string urlBan = "";
-    int idConsultarDI = 0;
-    ConsultarDlReq _ConsultarDlReq = new ConsultarDlReq();
-
-    ConsultarDlResp _ConsultarDIResp = new ConsultarDlResp();
-    ConsultarDI _ConsultarDI = new ConsultarDI();
-    public ConsultarDIController(IConfiguration config, NonceService nonceService, 
-                        CredApiRsService credApiRsService, ConsultarDlService ConsultarDIService)
+    private readonly ILogger<ConsultarDIController> _logger;
+    public ConsultarDIController(IConfiguration config, ConsultarDlService ConsultarDIService, 
+        IProcConsultarDlService ProcConsultarDlService, ILogger<ConsultarDIController> logger)
     {
-        _nonceService = nonceService;
-        _credApiRsService = credApiRsService;
         _config = config;
-        urlBan = _config["urlBan"].ToString();
         _ConsultarDIService = ConsultarDIService;
+        _ProcConsultarDlService = ProcConsultarDlService;
+        _logger = logger;
     }
    
     [HttpGet("consultarDI/{id}")]
+    [ProducesResponseType(typeof(ConsultarDlResp), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status502BadGateway)]
+    [ProducesResponseType(StatusCodes.Status504GatewayTimeout)]
     public async Task<IActionResult> ConsultarDI(string id,
         [FromQuery] string cuenta_cobrador,
         [FromQuery] string endtoend,
         [FromQuery] string referencia_c,
         [FromQuery] decimal monto,
-        [FromQuery] string canal)
+        [FromQuery] string canal,
+            CancellationToken ct)
 
     {
-        string queryStringDI= "";
-        
-
-        string nonce = await _nonceService.ObtNonce();
-        var cred = await _credApiRsService.ObtCredApi();
-        if (cred == null) return NotFound();
-
-        string path = "v1/cce/debinm/consultarDI";
-
-
-        string apiSignature = ApiSignatureGen.Generar(
-            path,
-            nonce,
-            cred.apiKeySecret
-        );
-
-        queryStringDI =
-                       "?cuenta_cobrador=" + cuenta_cobrador +
-                       "&endtoend=" + endtoend +
-                       "&referencia_c=" + referencia_c +
-                       "&monto=" + monto.ToString().Replace(",",".") +
-                       "&canal=" + canal.ToString();
-
-        _ConsultarDIResp = await SolConsultarDI(id, queryStringDI, cred.ApiKey,apiSignature, nonce);
-        _ConsultarDlReq.Id = id;
-        _ConsultarDlReq.cuenta_cobrador = cuenta_cobrador;
-        _ConsultarDlReq.endtoend = endtoend;
-        _ConsultarDlReq.referencia_c = referencia_c;
-        _ConsultarDlReq.Monto = monto;
-        _ConsultarDlReq.canal= canal;
-
-        _ConsultarDI.IdConsultarDI= await _ConsultarDIService.GrdConsultarDIAsync(
-             _ConsultarDlReq.Id,
-             _ConsultarDlReq.cuenta_cobrador,
-             _ConsultarDlReq.endtoend,
-             _ConsultarDlReq.referencia_c,
-             _ConsultarDlReq.Monto,
-             _ConsultarDlReq.canal,
-            queryStringDI
-            );
-
-        string jsonConsultarDIResp = JsonConvert.SerializeObject(_ConsultarDIResp);
-        bool rsValConsultarDIResp = await _ConsultarDIService.GrdConsultarDIRespAsync(
-            _ConsultarDI.IdConsultarDI,
-            _ConsultarDIResp.CodigoRespuesta,
-            _ConsultarDIResp.DescripcionCliente,
-            _ConsultarDIResp.DescripcionSistema,
-            _ConsultarDIResp.FechaHora,
-            jsonConsultarDIResp);
-
-        return Ok(new
+        var req = new ConsultarDlReq
         {
-            _ConsultarDI.IdConsultarDI,
-            rsValConsultarDIResp,
-            _ConsultarDIResp.CodigoRespuesta,
-            _ConsultarDIResp.DescripcionCliente,
-            _ConsultarDIResp.DescripcionSistema,
-            _ConsultarDIResp.FechaHora
+            Id = id,
+            cuenta_cobrador = cuenta_cobrador,
+            endtoend = endtoend,
+            referencia_c = referencia_c,
+            monto = monto,
+            canal = canal
+        };
 
-        });
-    }
+        if (!TryVal(req, out var errVal))
+            return BadRequest(errVal);
 
-    public async Task<ConsultarDlResp> SolConsultarDI(string prmId, string prmQryString, 
-                                                     string prmApiKey, string prmApiSignature, 
-                                                     string prmNonce)
-    {
-        string rsDat = "";
-        string codigoRespuesta = "";
-        string descripcionCliente = "";
-        string descripcionSistema = "";
-        string fechaHora = "";
-
-        using (var client = new HttpClient())
+        try
         {
-            client.BaseAddress = new Uri(urlBan);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("api-key", prmApiKey);
-            client.DefaultRequestHeaders.Add("api-signature", prmApiSignature);
-            client.DefaultRequestHeaders.Add("nonce", prmNonce);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            Debug.WriteLine($"{urlBan}v1/cce/debinm/consultarDI/{prmId}{prmQryString}");
-            using (var Res = await client.GetAsync($"v1/cce/debinm/consultarDI/{prmId}{prmQryString}"))
-            {
-
-                if (Res.Headers.TryGetValues("codigoRespuesta", out var values)) { codigoRespuesta= values.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionCliente", out var values1)) { descripcionCliente = values1.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("descripcionSistema", out var values2)) { descripcionSistema = values2.FirstOrDefault(); }
-                if (Res.Headers.TryGetValues("fechaHora", out var values3)) { fechaHora = values3.FirstOrDefault(); }
-
-                _ConsultarDIResp.CodigoRespuesta = codigoRespuesta;
-                _ConsultarDIResp.DescripcionCliente = descripcionCliente;
-                _ConsultarDIResp.DescripcionSistema = descripcionSistema;
-                _ConsultarDIResp.FechaHora =DateTime.Parse(fechaHora); 
-
-                // rsDat = await Res.Content.ReadAsStringAsync();
-                // _ConsultarDIResp = JsonConvert.DeserializeObject<ConsultarDIResp>(rsDat);
-            }
+            var resultado = await _ProcConsultarDlService.ProcesarConsultarDIAsync(req, ct);
+            return Ok(resultado);
         }
-        return _ConsultarDIResp;
-    }
-
-    public static class ApiKeyGen
-    {
-        public static string GenApiKey()
+        catch (HttpRequestException ex)
         {
-            byte[] bytes = new byte[16];
-
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(bytes);
-            }
-
-            return Convert.ToHexString(bytes).ToLower();
+            _logger.LogError(ex, "Error de comunicación con Banco Plaza en /consultarDI (tras los reintentos configurados)");
+            return StatusCode(StatusCodes.Status502BadGateway,
+                "No se pudo comunicar con el servicio del banco.");
+        }
+        catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning(ex, "Timeout al llamar a Banco Plaza en /consultarDI");
+            return StatusCode(StatusCodes.Status504GatewayTimeout,
+                "Tiempo de espera agotado al contactar al banco.");
+        }
+        catch (OperationCanceledException)
+        {
+            _logger.LogInformation("La petición /consultarDI fue cancelada por el cliente.");
+            return StatusCode(499);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error inesperado procesando /consultarDI");
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Ocurrió un error inesperado procesando la solicitud.");
         }
     }
 
-    public static class ApiKeySecretGen
+    private static bool TryVal(ConsultarDlReq req, out string? err)
     {
-        public static string GenKeySecret(int bytes = 16)
+        if (string.IsNullOrWhiteSpace(req.Id))
         {
-            var buffer = new byte[bytes];
-            using var rng = RandomNumberGenerator.Create();
-            rng.GetBytes(buffer);
-
-            return Convert.ToHexString(buffer).ToLower();
+            err = "El parámetro 'id' es obligatorio.";
+            return false;
         }
+        if (string.IsNullOrWhiteSpace(req.cuenta_cobrador))
+        {
+            err = "El parámetro 'cuenta_cobrador' es obligatorio.";
+            return false;
+        }
+        if (string.IsNullOrWhiteSpace(req.endtoend))
+        {
+            err = "El parámetro 'endtoend' es obligatorio.";
+            return false;
+        }
+        if (string.IsNullOrWhiteSpace(req.referencia_c))
+        {
+            err = "El parámetro 'referencia_c' es obligatorio.";
+            return false;
+        }
+        if (req.monto <= 0)
+        {
+            err = "El parámetro 'monto' debe ser mayor a cero.";
+            return false;
+        }
+        if (string.IsNullOrWhiteSpace(req.canal))
+        {
+            err = "El parámetro 'canal' es obligatorio.";
+            return false;
+        }
+
+        err = null;
+        return true;
     }
 
-public static class ApiSignatureGen
-{
-    public static string Generar(string path, string nonce, string secret)
-    {
-        string signatureRaw = $"/{path}{nonce}";
-        byte[] keyBytes = Encoding.UTF8.GetBytes(secret);
-        byte[] messageBytes = Encoding.UTF8.GetBytes(signatureRaw);
-
-        using (var hmac = new HMACSHA384(keyBytes))
-        {
-            byte[] hashBytes = hmac.ComputeHash(messageBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-        }
-    }
-}
 
 }

@@ -16,9 +16,8 @@ using System.Text;
 [Route("v1/cce/debinm")]
 public class TokenDIController : ControllerBase
 {
-    private readonly NonceService _nonceService;
-    private readonly CredApiRsService _credApiRsService;
-
+    private readonly IProcTokenDIService _IProcTokenDIService;
+    private readonly ILogger<TokenDIController> _logger;
     private readonly TokenDIService _TokenDIService;
     private readonly IConfiguration _config;
     string urlBan = "";
@@ -26,75 +25,96 @@ public class TokenDIController : ControllerBase
 
     TokenDlResp _TokenDIResp = new TokenDlResp();
     TokenDI _TokenDI = new TokenDI();
-    public TokenDIController(IConfiguration config, NonceService nonceService, 
-                        CredApiRsService credApiRsService, TokenDIService tokenDIService)
+    public TokenDIController(IConfiguration config, TokenDIService tokenDIService, IProcTokenDIService IProcTokenDIService,ILogger<TokenDIController> logger)
     {
-        _nonceService = nonceService;
-        _credApiRsService = credApiRsService;
         _config = config;
-        urlBan = _config["urlBan"].ToString();
         _TokenDIService = tokenDIService;
+        _IProcTokenDIService = IProcTokenDIService;
+        _logger = logger;
     }
 
     [HttpPost("tokenDI")]
-    public async Task<IActionResult> TokenDI()
+    [ProducesResponseType(typeof(TokenDlResp), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status502BadGateway)]
+    [ProducesResponseType(StatusCodes.Status504GatewayTimeout)]
+    public async Task<IActionResult> TokenDI(CancellationToken ct)
     {
-        string reqTokeDI="";
-        using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
+        string reqTokeDIRaw;
+        using (var reader = new StreamReader(Request.Body, Encoding.UTF8)) {reqTokeDIRaw = await reader.ReadToEndAsync(ct); }
+
+        if (string.IsNullOrWhiteSpace(reqTokeDIRaw))
+            return BadRequest("El cuerpo de la petición no puede estar vacío.");
+
+        TokenDIReq? reqTokeDI;
+        try
         {
-            reqTokeDI = await reader.ReadToEndAsync();
+            reqTokeDI = JsonConvert.DeserializeObject<TokenDIReq>(reqTokeDIRaw);
+        }
+        catch (JsonException ex)
+        {
+            _logger.LogWarning(ex, "JSON inválido recibido en /tokenDI");
+            return BadRequest("Cuerpo de petición inválido: JSON mal formado.");
         }
 
-        var _ReqTokeDI = JsonConvert.DeserializeObject<TokenDIReq>(reqTokeDI);
-        if (_ReqTokeDI == null) return BadRequest("Cuerpo de petición inválido.");
 
-        string nonce = await _nonceService.ObtNonce();
-        var cred = await _credApiRsService.ObtCredApi();
-        if (cred == null) return NotFound();
 
-        string path = "v1/cce/debinm/tokenDI";
-        string apiSignature = ApiSignatureGen.Generar(
-            path,
-            nonce,
-            reqTokeDI,
-            cred.apiKeySecret
-        );
+        if (reqTokeDI == null)
+            return BadRequest("Cuerpo de petición inválido.");
 
-        _TokenDIResp = await SolTokenDI(reqTokeDI, cred.ApiKey,apiSignature, nonce);
-        _TokenDI.IdTokenDI= await _TokenDIService.GrdTokenDIAsync(
-            _ReqTokeDI.Moneda,
-            _ReqTokeDI.Canal,
-            _ReqTokeDI.Tvalidacion_p,
-            _ReqTokeDI.Identificacion_p,
-            _ReqTokeDI.Cuenta_cobrador,
-            _ReqTokeDI.Cuenta_pagador,
-            _ReqTokeDI.Telefono_pagador,
-            _ReqTokeDI.Cod_banco_p,
-            _ReqTokeDI.Monto,
-            _ReqTokeDI.Direccion_ip,
-            reqTokeDI
-            );
+        if (!TryValReq(reqTokeDI, out var errVal))
+            return BadRequest(errVal);
 
-        string jsonTokenDIResp = JsonConvert.SerializeObject(_TokenDIResp);
-        bool rsValTokDIResp = await _TokenDIService.GrdTokenDIRespAsync(
-            _TokenDI.IdTokenDI,
-            _TokenDIResp.CodigoRespuesta,
-            _TokenDIResp.DescripcionCliente,
-            _TokenDIResp.DescripcionSistema,
-            _TokenDIResp.FechaHora,
-            jsonTokenDIResp);
-
-        return Ok(new
+        try
         {
-            _TokenDI.IdTokenDI,
-             rsValTokDIResp,
-            _TokenDIResp.CodigoRespuesta,
-            _TokenDIResp.DescripcionCliente,
-            _TokenDIResp.DescripcionSistema,
-            _TokenDIResp.FechaHora
-
-        });
+            var resultado = await _IProcTokenDIService.ProcTokenDIAsync(reqTokeDI, reqTokeDIRaw, ct);
+            return Ok(resultado);
+        }
+        catch (HttpRequestException ex)
+        {
+            _logger.LogError(ex, "Error de comunicación con Banco Plaza en /tokenDI");
+            return StatusCode(StatusCodes.Status502BadGateway,
+                "No se pudo comunicar con el servicio del banco.");
+        }
+        catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            // TaskCanceledException lanzada por timeout del HttpClient (no por el cliente cancelando)
+            _logger.LogWarning(ex, "Timeout al llamar a Banco Plaza en /tokenDI");
+            return StatusCode(StatusCodes.Status504GatewayTimeout,
+                "Tiempo de espera agotado al contactar al banco.");
+        }
+        catch (OperationCanceledException)
+        {
+            // El propio cliente HTTP canceló la petición: no hay nada que responder.
+            _logger.LogInformation("La petición /tokenDI fue cancelada por el cliente.");
+            return StatusCode(499); // Client Closed Request (convención informal)
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error inesperado procesando /tokenDI");
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Ocurrió un error inesperado procesando la solicitud.");
+        }
     }
+
+    private static bool TryValReq(TokenDIReq req, out string? err)
+    {
+        if (string.IsNullOrWhiteSpace(req.Moneda))
+        {
+            err = "El campo 'Moneda' es obligatorio.";
+            return false;
+        }
+        else if (req.Monto <= 0)
+        {
+            err = "El campo 'Monto' debe ser mayor a cero.";
+            return false;
+        }
+
+        err = null;
+        return true;
+    }
+
+    
 
     public async Task<TokenDlResp> SolTokenDI(string prmJson, string prmApiKey, 
                                          string prmApiSignature, string prmNonce)
@@ -134,48 +154,5 @@ public class TokenDIController : ControllerBase
         }
         return _TokenDIResp;
     }
-
-
-    public static class ApiKeyGen
-    {
-        public static string GenApiKey()
-        {
-            byte[] bytes = new byte[16];
-
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(bytes);
-            }
-
-            return Convert.ToHexString(bytes).ToLower();
-        }
-    }
-
-    public static class ApiKeySecretGen
-    {
-        public static string GenKeySecret(int bytes = 16)
-        {
-            var buffer = new byte[bytes];
-            using var rng = RandomNumberGenerator.Create();
-            rng.GetBytes(buffer);
-
-            return Convert.ToHexString(buffer).ToLower(); //  32
-        }
-    }
-
-public static class ApiSignatureGen
-{
-    public static string Generar(string path, string nonce, string body, string secret)
-    {
-        string signatureRaw = $"/{path}{nonce}{body}";
-        byte[] keyBytes = Encoding.UTF8.GetBytes(secret);
-        byte[] messageBytes = Encoding.UTF8.GetBytes(signatureRaw);
-        using (var hmac = new HMACSHA384(keyBytes))
-        {
-            byte[] hashBytes = hmac.ComputeHash(messageBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-        }
-    }
-}
 
 }

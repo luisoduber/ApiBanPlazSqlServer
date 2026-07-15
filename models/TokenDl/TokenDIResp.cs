@@ -4,9 +4,11 @@ namespace ApiBanPlaz.models.TokenDl
 {
     public class TokenDlResp
     {
-        public string CodigoRespuesta { get; set; }
-        public string DescripcionCliente { get; set; }
-        public string DescripcionSistema { get; set; }
+        public int IdTokenDI { get; set; }
+        public bool GuardadoRespuestaOk { get; set; }
+        public string CodigoRespuesta { get; set; } = string.Empty;
+        public string DescripcionCliente { get; set; } = string.Empty;
+        public string DescripcionSistema { get; set; } = string.Empty;
         public DateTime FechaHora { get; set; }
     }
 }

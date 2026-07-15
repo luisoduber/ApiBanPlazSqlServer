@@ -11,6 +11,7 @@ using ApiBanPlaz.Servicios.PagoO;
 using ApiBanPlaz.Servicios.PagosP2p;
 using ApiBanPlaz.Servicios.TokenDl;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -23,8 +24,27 @@ builder.Services.AddDbContext<BanPlazDbContext>(options =>
     );
 });
 
+var urlBan = builder.Configuration["BanPlaz:UrlBan"];
+
+if (string.IsNullOrWhiteSpace(urlBan))
+{
+    throw new InvalidOperationException(
+        "La configuración 'BancoPlaza:UrlBan' es requerida.");
+}
+
+builder.Services.AddHttpClient("BanPlaz", client =>
+{
+    client.BaseAddress = new Uri(urlBan);
+    client.Timeout = TimeSpan.FromSeconds(30);
+})
+.ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
+ {
+     PooledConnectionLifetime = TimeSpan.Zero
+});
+
 builder.Services.AddScoped<CredApiRsService>();
 builder.Services.AddScoped<NonceService>();
+builder.Services.AddScoped<IApiSigService, ApiSigService>();
 builder.Services.AddScoped<TokenDIService>();
 builder.Services.AddScoped<CobroDIService>();
 builder.Services.AddScoped<ConsultarDlService>();
@@ -36,8 +56,12 @@ builder.Services.AddScoped<OperacionService>();
 builder.Services.AddScoped<OperacionesService>();
 builder.Services.AddScoped<CuentasService>();
 builder.Services.AddScoped<CuentasMovService>();
-var app = builder.Build();
+builder.Services.AddScoped<IProcTokenDIService, ProcTokenDIService>();
+builder.Services.AddScoped<IProcCobroDIService, ProcCobroDIService>();
+builder.Services.AddScoped<IProcConsultarDlService, ProcConsultarDlService>();
+builder.Services.AddScoped<IProcPagosP2pService, ProcPagosP2pService>();
 
+var app = builder.Build();
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }
 app.UseHttpsRedirection();
 app.UseAuthorization();
