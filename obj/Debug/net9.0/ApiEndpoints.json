@@ -632,52 +632,6 @@
   },
   {
     "ContainingType": "CompPmController",
-    "Method": "SolCompPm",
-    "RelativePath": "v1/pagos",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmQryString",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.CompPm.CompPmResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "CompPmController",
     "Method": "p2pId",
     "RelativePath": "v1/pagos/p2p/{id}",
     "HttpMethod": "GET",
@@ -730,7 +684,36 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CompPm.CompPmResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "PagosP2pController",

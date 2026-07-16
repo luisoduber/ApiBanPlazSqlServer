@@ -62,6 +62,7 @@ builder.Services.AddScoped<IProcConsultarDlService, ProcConsultarDlService>();
 builder.Services.AddScoped<IProcPagosP2pService, ProcPagosP2pService>();
 builder.Services.AddScoped<IProcPagosOService, ProcPagosOService>();
 builder.Services.AddScoped<IProcConsultaLiqService, ProcConsultaLiqService>();
+builder.Services.AddScoped<IProcCompPmService, ProcCompPmService>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }

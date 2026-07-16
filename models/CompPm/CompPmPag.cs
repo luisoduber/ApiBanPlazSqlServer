@@ -2,26 +2,25 @@
 
 namespace ApiBanPlaz.models.CompPm
 {
-    public class pago
+    public class Pago
     {
-        public string Accion { get; set; }
-        public string Banco { get; set; }
-        public string TelefonoCliente { get; set; }
-        public string TelefonoAfiliado { get; set; }
+        public string Accion { get; set; } = string.Empty;
+        public string Banco { get; set; } = string.Empty;
+        public string TelefonoCliente { get; set; } = string.Empty;
+        public string TelefonoAfiliado { get; set; } = string.Empty;
         public decimal Monto { get; set; }
-        public string Origen { get; set; }
-        public string Fecha { get; set; }
-        public string Hora { get; set; }
-        public string Referencia { get; set; }
-        public string Concepto { get; set; }
+        public string Origen { get; set; } = string.Empty;
+        public string Fecha { get; set; } = string.Empty;
+        public string Hora { get; set; } = string.Empty;
+        public string Referencia { get; set; } = string.Empty;
+        public string Concepto { get; set; } = string.Empty;
+        public string CedulaB { get; set; } = string.Empty;
+    }
 
-        public string cedulaB { get; set; }
-}
-
-
+    /// </summary>
     public class CompPmPag
     {
-        public int cantidadPagos { get; set; }
-        public List<pago> pagos { get; set; }
+        public int CantidadPagos { get; set; }
+        public List<Pago> Pagos { get; set; } = new();
     }
 }
