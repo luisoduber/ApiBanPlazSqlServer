@@ -4,38 +4,17 @@ namespace ApiBanPlaz.models.Operacion
 {
     public class OperacionReq
     {
-        [StringLength(20)]
-        public string Cuenta { get; set; }
-
-        [StringLength(4)]
-        public string Moneda { get; set; }
-
-        [StringLength(4)]
-        public string Banco { get; set; }
-       
-        [StringLength(4)]
-        public string TPago { get; set; }
-
-        [StringLength(2)]
-        public string Naturaleza { get; set; }
-
-        [StringLength(12)]
-        public string Referencia { get; set; }
-
-        [StringLength(10)]
-        public string FechaInicio { get; set; }
-
-        [StringLength(10)]
-        public string FechaFin { get; set; }
+        public string Cuenta { get; set; } = string.Empty;
+        public string Moneda { get; set; } = string.Empty;
+        public string Banco { get; set; } = string.Empty;
+        public string TPago { get; set; } = string.Empty;
+        public string Naturaleza { get; set; } = string.Empty;
+        public string Referencia { get; set; } = string.Empty;
+        public string FechaInicio { get; set; } = string.Empty;
+        public string FechaFin { get; set; } = string.Empty;
         public decimal Monto { get; set; }
-
-        [StringLength(2)]
-        public string canal { get; set; }
-
-        [StringLength(10)]
-        public string Id { get; set; }
-
-        [StringLength(20)]
-        public string Direccion_ip { get; set; }
+        public string Canal { get; set; } = string.Empty;
+        public string Id { get; set; } = string.Empty;
+        public string Direccion_ip { get; set; } = string.Empty;
     }
 }

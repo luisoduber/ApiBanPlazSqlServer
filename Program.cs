@@ -2,7 +2,6 @@ using ApiBanPlaz.Servicios.CobroDl;
 using ApiBanPlaz.Servicios.CompPm;
 using ApiBanPlaz.Servicios.ConsultaLiq;
 using ApiBanPlaz.Servicios.ConsultarDl;
-using ApiBanPlaz.Servicios.Cuentas;
 using ApiBanPlaz.Servicios.CuentasMov;
 using ApiBanPlaz.Servicios.General;
 using ApiBanPlaz.Servicios.Operacion;
@@ -54,7 +53,6 @@ builder.Services.AddScoped<ConsultaLiqService>();
 builder.Services.AddScoped<CompPmService>();
 builder.Services.AddScoped<OperacionService>();
 builder.Services.AddScoped<OperacionesService>();
-builder.Services.AddScoped<CuentasService>();
 builder.Services.AddScoped<CuentasMovService>();
 builder.Services.AddScoped<IProcTokenDIService, ProcTokenDIService>();
 builder.Services.AddScoped<IProcCobroDIService, ProcCobroDIService>();
@@ -63,6 +61,9 @@ builder.Services.AddScoped<IProcPagosP2pService, ProcPagosP2pService>();
 builder.Services.AddScoped<IProcPagosOService, ProcPagosOService>();
 builder.Services.AddScoped<IProcConsultaLiqService, ProcConsultaLiqService>();
 builder.Services.AddScoped<IProcCompPmService, ProcCompPmService>();
+builder.Services.AddScoped<IProcOperacionService, ProcOperacionService>();
+builder.Services.AddScoped<IProcOperacionesService, ProcOperacionesService>();
+builder.Services.AddScoped<IProcCuentasMovService, ProcCuentasMovService>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }

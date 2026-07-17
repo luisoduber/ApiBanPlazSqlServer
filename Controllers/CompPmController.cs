@@ -35,7 +35,6 @@ public class CompPmController : ControllerBase
         [FromQuery] string? horaFin,
         CancellationToken ct)
     {
-
         tlfa = tlfa ?? "";
         horaIni = horaIni ?? "";
         horaFin = horaFin ?? "";

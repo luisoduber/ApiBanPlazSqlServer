@@ -2,10 +2,10 @@
 {
     public class OperacionesResp
     {
-        public string CodigoRespuesta { get; set; }
-        public string DescripcionCliente { get; set; }
-        public string DescripcionSistema { get; set; }
-        public DateTime FechaHora { get; set; }
         public int CantMovimientos { get; set; }
+        public string CodigoRespuesta { get; set; } = string.Empty;
+        public string DescripcionCliente { get; set; } = string.Empty;
+        public string DescripcionSistema { get; set; } = string.Empty;
+        public DateTime FechaHora { get; set; }
     }
 }

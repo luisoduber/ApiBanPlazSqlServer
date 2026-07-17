@@ -5,21 +5,21 @@ namespace ApiBanPlaz.models.CuentasMov
     public class CuentasMovReq
     {
         [StringLength(20)]
-        public string Cuenta { get; set; }
+        public string Cuenta { get; set; } = string.Empty;
         [StringLength(3)]
-        public string Moneda { get; set; }
+        public string Moneda { get; set; } = string.Empty;
         [StringLength(12)]
-        public string prmReferencia { get; set; }
+        public string Referencia { get; set; } = string.Empty;
         [StringLength(10)]
-        public string FechaInicio { get; set; }
+        public string FechaInicio { get; set; } = string.Empty;
         [StringLength(10)]
-        public string FechaFin { get; set; }
+        public string FechaFin { get; set; } = string.Empty;
         [StringLength(200)]
-        public string Tipo { get; set; }
+        public string Tipo { get; set; } = string.Empty;
         public decimal MontoMinimo { get; set; }
         public decimal MontoMaximo { get; set; }
         [StringLength(200)]
-        public string Concepto { get; set; }
+        public string Concepto { get; set; } = string.Empty;
 
     }
 }

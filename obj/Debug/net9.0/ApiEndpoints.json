@@ -1,120 +1,12 @@
 [
   {
-    "ContainingType": "ApiBanPlaz.Controllers.CuentasController",
-    "Method": "SolCuentas",
-    "RelativePath": "v0",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.Cuentas.CuentasResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
-    "Method": "SolCuentas",
-    "RelativePath": "v0",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmQryStringListMov",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.CuentasMov.CuentasMovResp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "OperacionController",
-    "Method": "SolOperacion",
-    "RelativePath": "v0/cuentas",
-    "HttpMethod": "",
+    "Method": "Operacion",
+    "RelativePath": "v0/cuentas/Operacion",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmJson",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "ApiBanPlaz.models.Operacion.OperacionResp",
@@ -124,88 +16,30 @@
           "text/json"
         ],
         "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "OperacionesesController",
-    "Method": "SolOperaciones",
-    "RelativePath": "v0/cuentas",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prmRif",
-        "Type": "System.String",
-        "IsRequired": false
       },
       {
-        "Name": "prmJson",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmApiSignature",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "prmNonce",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ApiBanPlaz.models.Operaciones.OperacionesResp",
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 200
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
       }
     ]
   },
   {
-    "ContainingType": "ApiBanPlaz.Controllers.CuentasController",
-    "Method": "Cuentas",
-    "RelativePath": "v0/Cuentas/{id}/{cuenta}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "cuenta",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OperacionController",
-    "Method": "Operacion",
-    "RelativePath": "v0/cuentas/Operacion",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OperacionesesController",
+    "ContainingType": "OperacionesController",
     "Method": "Operaciones",
     "RelativePath": "v0/cuentas/operaciones/{prmRif}",
     "HttpMethod": "POST",
@@ -218,7 +52,36 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.Operaciones.OperacionesResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
@@ -249,11 +112,40 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CuentasMov.CuentasMovResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "ApiBanPlaz.Controllers.CuentasMovController",
-    "Method": "CuentasMov",
+    "Method": "CuentasMovConId",
     "RelativePath": "v0/cuentasMov/{id}/{cuenta}/movimientos",
     "HttpMethod": "GET",
     "IsController": true,
@@ -285,7 +177,36 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ApiBanPlaz.models.CuentasMov.CuentasMovResp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 502
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 504
+      }
+    ]
   },
   {
     "ContainingType": "ConsultaLiqController",
